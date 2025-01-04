@@ -1,9 +1,10 @@
 import "./App.css";
+import 'boxicons'
 
 function App() {
     return (
         <>
-            <h1 className="text-3xl font-bold underline">Hello world!</h1>
+            <h1 className="text-3xl font-bold underline">Hello world! <box-icon name='like' color="white" size='lg'></box-icon></h1>
             <div className="carousel carousel-vertical rounded-box h-96">
                 <div className="carousel-item h-full">
                     <img src="https://img.daisyui.com/images/stock/photo-1559703248-dcaaec9fab78.webp" />
