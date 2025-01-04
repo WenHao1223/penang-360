@@ -1,11 +1,20 @@
 import "./App.css";
-import 'boxicons'
-import { BeakerIcon } from '@heroicons/react/24/solid'
+import "boxicons";
+import { BeakerIcon } from "@heroicons/react/24/solid";
+import Swal from "sweetalert2";
 
 function App() {
+    Swal.fire({
+        title: "Hello world!",
+        text: "This is a simple alert!",
+        icon: "success",
+        confirmButtonText: "Cool",
+    });
+
     return (
         <>
-            <h1 className="text-3xl font-bold underline">Hello world! <box-icon name='like' color="white" size='lg'></box-icon></h1>
+            <h1 className="text-3xl font-bold underline">Hello world!</h1>
+            <box-icon name="like" color="white" size="lg"></box-icon>
             <i className="fas fa-kitchen-set"></i>
             <BeakerIcon className="size-6 text-blue-500" />
             <div className="carousel carousel-vertical rounded-box h-96">
