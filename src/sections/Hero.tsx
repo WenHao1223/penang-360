@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import LogoTrimmed from "@assets/logo/logo-trimmed.png";
+import PenangBridge from "@assets/hero/penang-bridge.jpg";
 
 const Hero: React.FC = () => {
     const textRef = useRef<HTMLSpanElement>(null);
@@ -203,7 +204,14 @@ const Hero: React.FC = () => {
                             }}
                         />
                     </div>
-                    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                    <div className="absolute inset-x-0 top-0 z-0 h-screen w-screen opacity-30 blur-xs mix-blend-color-burn">
+                        <img
+                            className="relative object-cover w-full h-full sm:h-144 lg:h-160"
+                            src={PenangBridge}
+                            alt="Penang Bridge"
+                        />
+                    </div>
+                    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 mix-blend-hard-light">
                         <div className="text-center">
                             <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
                                 Penang 360°
