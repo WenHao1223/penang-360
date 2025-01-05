@@ -1,11 +1,55 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 import LogoTrimmed from "@assets/logo/logo-trimmed.png";
 
 const Hero: React.FC = () => {
+    const textRef = useRef<HTMLSpanElement>(null);
+
+    useEffect(() => {
+        const texts = [
+            {
+                text: "Discover the best places to eat in Penang",
+                color: "text-indigo-600",
+            },
+            {
+                text: "Find the most comfortable places to stay in Penang",
+                color: "text-green-600",
+            },
+            {
+                text: "Explore the top attractions to visit in Penang",
+                color: "text-yellow-600",
+            },
+        ];
+        let index = 0;
+
+        const animateText = () => {
+            if (textRef.current) {
+                gsap.to(textRef.current, {
+                    y: -20,
+                    opacity: 0,
+                    duration: 0.5,
+                    onComplete: () => {
+                        textRef.current!.textContent = texts[index].text;
+                        textRef.current!.className = `relative inline-block ${texts[index].color}`;
+                        gsap.fromTo(
+                            textRef.current,
+                            { y: 20, opacity: 0 },
+                            { y: 0, opacity: 1, duration: 0.5 }
+                        );
+                        index = (index + 1) % texts.length;
+                    },
+                });
+            }
+        };
+
+        const interval = setInterval(animateText, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div>
-            <div className="bg-white">
+            <div className="bg-white h-screen">
                 <header className="absolute inset-x-0 top-0 z-50">
                     <nav
                         className="flex items-center justify-between p-6 lg:px-8"
@@ -17,7 +61,7 @@ const Hero: React.FC = () => {
                                 <img
                                     className="h-8 w-auto"
                                     src={LogoTrimmed}
-                                    alt=""
+                                    alt="penang360-logo"
                                 />
                             </a>
                         </div>
@@ -58,10 +102,10 @@ const Hero: React.FC = () => {
                                 Dining
                             </a>
                             <a
-                                href="#shopping"
+                                href="#hotel"
                                 className="text-sm/6 font-semibold text-gray-900"
                             >
-                                Shopping
+                                Hotel
                             </a>
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -85,8 +129,8 @@ const Hero: React.FC = () => {
                                     </span>
                                     <img
                                         className="h-8 w-auto"
-                                        src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                                        alt=""
+                                        src={LogoTrimmed}
+                                        alt="penang360-logo"
                                     />
                                 </a>
                                 <button
@@ -127,10 +171,10 @@ const Hero: React.FC = () => {
                                             Dining
                                         </a>
                                         <a
-                                            href="#shopping"
+                                            href="#hotel"
                                             className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                         >
-                                            Shopping
+                                            Hotel
                                         </a>
                                     </div>
                                     <div className="py-6">
@@ -160,29 +204,24 @@ const Hero: React.FC = () => {
                         />
                     </div>
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-                        <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                            <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                                Announcing our next round of funding.{" "}
-                                <a
-                                    href="#"
-                                    className="font-semibold text-indigo-600"
-                                >
-                                    <span
-                                        className="absolute inset-0"
-                                        aria-hidden="true"
-                                    />
-                                    Read more <span aria-hidden="true">→</span>
-                                </a>
-                            </div>
-                        </div>
                         <div className="text-center">
                             <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
-                                Data to enrich your online business
+                                Penang 360°
                             </h1>
-                            <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
-                                Anim aute id magna aliqua ad ad non deserunt
-                                sunt. Qui irure qui lorem cupidatat commodo.
-                                Elit sunt amet fugiat veniam occaecat.
+                            <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8">
+                                Penang, a vibrant Malaysian state, is known for
+                                its rich cultural heritage and stunning
+                                landscapes. From bustling streets to serene
+                                beaches, Penang offers a unique blend of
+                                experiences.
+                            </p>
+                            <p className="mt-8 text-lg font-normal text-gray-500 sm:text-xl/8">
+                                <span
+                                    ref={textRef}
+                                    className="relative inline-block text-indigo-600"
+                                >
+                                    Discover the best places to eat
+                                </span>{" "}
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
                                 <a
