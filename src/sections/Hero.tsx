@@ -233,17 +233,15 @@ const Hero: React.FC = () => {
                             alt="Penang Bridge"
                         />
                     </div>
-                    <div className="mx-auto max-w-2xl py-32 sm:py-40 lg:py-48 mix-blend-hard-light">
+                    <div className="mx-auto max-w-2xl py-44 sm:py-40 lg:py-48 mix-blend-hard-light">
                         <div className="text-center">
-                            <h1 className="text-balance text-6xl tracking-tight text-gray-900 sm:text-9xl tangerine-bold ">
+                            <h1 className="text-balance text-8xl tracking-tight text-gray-900 sm:text-9xl tangerine-bold ">
                                 Penang 360°
                             </h1>
                             <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8">
                                 Penang, a vibrant Malaysian state, is known for
-                                its rich cultural heritage and stunning
-                                landscapes. From bustling streets to serene
-                                beaches, Penang offers a unique blend of
-                                experiences.
+                                its rich heritage, stunning landscapes, bustling
+                                streets, and serene beaches.
                             </p>
                             <p className="mt-8 text-lg font-medium italic text-gray-500 sm:text-xl/8">
                                 <span
