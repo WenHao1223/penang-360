@@ -1,5 +1,7 @@
 import React from "react";
 
+import LogoTrimmed from "@assets/logo/logo-trimmed.png";
+
 const Hero: React.FC = () => {
     return (
         <div>
@@ -14,7 +16,7 @@ const Hero: React.FC = () => {
                                 <span className="sr-only">Your Company</span>
                                 <img
                                     className="h-8 w-auto"
-                                    src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                                    src={LogoTrimmed}
                                     alt=""
                                 />
                             </a>
@@ -44,28 +46,22 @@ const Hero: React.FC = () => {
                         </div>
                         <div className="hidden lg:flex lg:gap-x-12">
                             <a
-                                href="#"
+                                href="#places-of-interest"
                                 className="text-sm/6 font-semibold text-gray-900"
                             >
-                                Product
+                                Places of Interest
                             </a>
                             <a
-                                href="#"
+                                href="#dining"
                                 className="text-sm/6 font-semibold text-gray-900"
                             >
-                                Features
+                                Dining
                             </a>
                             <a
-                                href="#"
+                                href="#shopping"
                                 className="text-sm/6 font-semibold text-gray-900"
                             >
-                                Marketplace
-                            </a>
-                            <a
-                                href="#"
-                                className="text-sm/6 font-semibold text-gray-900"
-                            >
-                                Company
+                                Shopping
                             </a>
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -119,28 +115,22 @@ const Hero: React.FC = () => {
                                 <div className="-my-6 divide-y divide-gray-500/10">
                                     <div className="space-y-2 py-6">
                                         <a
-                                            href="#"
+                                            href="#places-of-interest"
                                             className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                         >
-                                            Product
+                                            Places of Interest
                                         </a>
                                         <a
-                                            href="#"
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                            href="#dining"
+                                            className="-mx-3 block rounded-lg px-3 p y-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                         >
-                                            Features
+                                            Dining
                                         </a>
                                         <a
-                                            href="#"
+                                            href="#shopping"
                                             className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                         >
-                                            Marketplace
-                                        </a>
-                                        <a
-                                            href="#"
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                        >
-                                            Company
+                                            Shopping
                                         </a>
                                     </div>
                                     <div className="py-6">
