@@ -11,15 +11,21 @@ const Hero: React.FC = () => {
         const texts = [
             {
                 text: "Discover the best places to eat in Penang",
-                color: "text-indigo-600",
+                textColor: "text-blue-600",
+                borderColor: "border-blue-600/60",
+                backgroundColor: "bg-blue-600/5",
             },
             {
                 text: "Find the most comfortable places to stay in Penang",
-                color: "text-green-600",
+                textColor: "text-teal-600",
+                borderColor: "border-teal-600/60",
+                backgroundColor: "bg-teal-600/5",
             },
             {
                 text: "Explore the top attractions to visit in Penang",
-                color: "text-yellow-600",
+                textColor: "text-purple-600",
+                borderColor: "border-purple-600/60",
+                backgroundColor: "bg-purple-600/5",
             },
         ];
         let index = 0;
@@ -32,11 +38,11 @@ const Hero: React.FC = () => {
                     duration: 0.5,
                     onComplete: () => {
                         textRef.current!.textContent = texts[index].text;
-                        textRef.current!.className = `relative inline-block ${texts[index].color}`;
+                        textRef.current!.className = `relative inline-block px-4 py-2 border-2 border-solid rounded-lg ${texts[index].backgroundColor} ${texts[index].textColor} ${texts[index].borderColor}`;
                         gsap.fromTo(
                             textRef.current,
                             { y: 20, opacity: 0 },
-                            { y: 0, opacity: 1, duration: 0.5 }
+                            { y: 0, opacity: 1, duration: 0.2 }
                         );
                         index = (index + 1) % texts.length;
                     },
@@ -213,7 +219,7 @@ const Hero: React.FC = () => {
                     </div>
                     <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 mix-blend-hard-light">
                         <div className="text-center">
-                            <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-7xl">
+                            <h1 className="text-balance text-6xl tracking-tight text-gray-900 sm:text-9xl tangerine-bold ">
                                 Penang 360°
                             </h1>
                             <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8">
@@ -223,12 +229,12 @@ const Hero: React.FC = () => {
                                 beaches, Penang offers a unique blend of
                                 experiences.
                             </p>
-                            <p className="mt-8 text-lg font-normal text-gray-500 sm:text-xl/8">
+                            <p className="mt-8 text-lg font-medium italic text-gray-500 sm:text-xl/8">
                                 <span
                                     ref={textRef}
-                                    className="relative inline-block text-indigo-600"
+                                    className="relative inline-block px-4 py-2 border-2 border-solid rounded-lg bg-blue-600/5 text-blue-600 border-blue-600/60"
                                 >
-                                    Discover the best places to eat
+                                    Discover the best places to eat in Penang
                                 </span>{" "}
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
