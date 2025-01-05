@@ -242,7 +242,7 @@ const Hero: React.FC = () => {
                             }}
                         ></div>
                     </div>
-                    <div className="mx-auto max-w-2xl py-44 sm:py-40 lg:py-48">
+                    <div className="mx-auto max-w-2xl py-44 sm:py-40 xl:py-36 2xl:py-48">
                         <div className="text-center">
                             <h1 className="text-balance text-8xl tracking-tight text-gray-900 sm:text-9xl tangerine-bold ">
                                 Penang 360°
