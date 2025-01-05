@@ -6,6 +6,7 @@ import PenangBridge from "@assets/hero/penang-bridge.jpg";
 
 const Hero: React.FC = () => {
     const textRef = useRef<HTMLSpanElement>(null);
+    const imageRef = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
         const texts = [
@@ -52,6 +53,20 @@ const Hero: React.FC = () => {
 
         const interval = setInterval(animateText, 3000);
         return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (imageRef.current) {
+                const scrollPosition = window.scrollY;
+                imageRef.current.style.transform = `translateY(${
+                    scrollPosition * 0.5
+                }px)`;
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
@@ -128,14 +143,14 @@ const Hero: React.FC = () => {
                     <div className="lg:hidden" role="dialog" aria-modal="true">
                         {/* Background backdrop, show/hide based on slide-over state. */}
                         <div className="fixed inset-0 z-50" />
-                        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                        <div className="fixed inset-y-0 right-0 z-50 w-full h-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                             <div className="flex items-center justify-between">
                                 <a href="#" className="-m-1.5 p-1.5">
                                     <span className="sr-only">
                                         Your Company
                                     </span>
                                     <img
-                                        className="h-8 w-auto"
+                                        className="h-8 w-auto object-contain"
                                         src={LogoTrimmed}
                                         alt="penang360-logo"
                                     />
@@ -210,14 +225,15 @@ const Hero: React.FC = () => {
                             }}
                         />
                     </div>
-                    <div className="absolute inset-x-0 top-0 z-0 h-screen w-screen opacity-30 blur-xs mix-blend-color-burn">
+                    <div className="absolute inset-x-0 top-0 z-0 w-screen h-screen opacity-30 blur-xs mix-blend-color-burn">
                         <img
+                            ref={imageRef}
                             className="relative object-cover w-full h-full sm:h-144 lg:h-160"
                             src={PenangBridge}
                             alt="Penang Bridge"
                         />
                     </div>
-                    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 mix-blend-hard-light">
+                    <div className="mx-auto max-w-2xl py-32 sm:py-40 lg:py-48 mix-blend-hard-light">
                         <div className="text-center">
                             <h1 className="text-balance text-6xl tracking-tight text-gray-900 sm:text-9xl tangerine-bold ">
                                 Penang 360°
@@ -253,7 +269,7 @@ const Hero: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div
+                    {/* <div
                         className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
                         aria-hidden="true"
                     >
@@ -264,7 +280,7 @@ const Hero: React.FC = () => {
                                     "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
                             }}
                         />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
