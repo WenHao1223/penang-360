@@ -6,7 +6,7 @@ import PenangBridge from "@assets/hero/penang-bridge.jpg";
 
 const Hero: React.FC = () => {
     const textRef = useRef<HTMLSpanElement>(null);
-    const imageRef = useRef<HTMLImageElement>(null);
+    const imageRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const texts = [
@@ -225,15 +225,18 @@ const Hero: React.FC = () => {
                             }}
                         />
                     </div>
-                    <div className="absolute inset-x-0 top-0 z-0 w-screen h-screen opacity-30 blur-xs mix-blend-color-burn">
-                        <img
+                    <div className="absolute inset-x-0 top-0 z-0 w-screen h-screen overflow-hidden mix-blend-overlay">
+                        <div
                             ref={imageRef}
-                            className="relative object-cover w-full h-full sm:h-144 lg:h-160"
-                            src={PenangBridge}
-                            alt="Penang Bridge"
-                        />
+                            className="relative w-full h-full opacity-30"
+                            style={{
+                                backgroundImage: `url(${PenangBridge})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                            }}
+                        ></div>
                     </div>
-                    <div className="mx-auto max-w-2xl py-44 sm:py-40 lg:py-48 mix-blend-hard-light">
+                    <div className="mx-auto max-w-2xl py-44 sm:py-40 lg:py-48">
                         <div className="text-center">
                             <h1 className="text-balance text-8xl tracking-tight text-gray-900 sm:text-9xl tangerine-bold ">
                                 Penang 360°
