@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900");
+@import url("https://fonts.googleapis.com/css2?family=Cantata+One&family=Tangerine:wght@400;700&display=swap&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900");
 
 .tangerine {
     font-family: "Tangerine", serif; /* 400, 700 */ /* normal */
@@ -6,4 +6,8 @@
 
 .bodoni-moda {
     font-family: "Bodoni Moda", serif; /* 400, 500, 600, 700, 800, 900 */ /* normal, italic */
+}
+
+.centa-one {
+    font-family: "Centata One", serif; /* 400 */ /* normal */
 }
