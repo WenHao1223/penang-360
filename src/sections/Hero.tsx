@@ -244,15 +244,15 @@ const Hero: React.FC = () => {
                     </div>
                     <div className="mx-auto max-w-2xl py-44 sm:py-40 xl:py-36 2xl:py-48 z-10">
                         <div className="text-center">
-                            <h1 className="text-balance text-8xl tracking-tight text-gray-900 sm:text-9xl tangerine-bold ">
+                            <h1 className="text-balance text-8xl text-black sm:text-9xl tangerine-bold ">
                                 Penang 360°
                             </h1>
-                            <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8">
+                            <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8 ">
                                 Penang, a vibrant Malaysian state, is known for
                                 its rich heritage, stunning landscapes, bustling
                                 streets, and serene beaches.
                             </p>
-                            <p className="mt-8 text-lg font-medium italic text-gray-500 sm:text-xl/8">
+                            <p className="mt-8 text-lg font-medium italic text-gray-500 sm:text-xl/8 bodoni-moda-medium">
                                 <span
                                     ref={textRef}
                                     className="relative inline-block px-4 py-2 border-2 border-solid rounded-lg bg-blue-600/5 text-blue-600 border-blue-600/60"

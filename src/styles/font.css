@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900");
+
+.tangerine-regular {
+    font-family: "Tangerine", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tangerine-bold {
+    font-family: "Tangerine", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.bodoni-moda-regular {
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bodoni-moda-italic {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.bodoni-moda-medium {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.bodoni-moda-medium-italic {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.bodoni-moda-semi-bold {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.bodoni-moda-semi-bold-italic {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.bodoni-moda-bold {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.bodoni-moda-bold-italic {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.bodoni-moda-heavy {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.bodoni-moda-heavy-italic {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.bodoni-moda-black {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.bodoni-moda-black-italic {
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: italic;
+}
