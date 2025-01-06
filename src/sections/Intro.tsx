@@ -6,7 +6,7 @@ import PenangStreet from "@assets/images/intro/penang-street.webp";
 const Intro: React.FC = () => {
     return (
         <section
-            className="section bg-white pt-10 px-16 md:px-32 lg:px-64 text-gray-800 min-h-screen h-screen"
+            className="section bg-white pt-16 px-16 md:px-32 lg:px-64 text-gray-800 min-h-screen pb-16"
             id="intro"
         >
             <div className="flex flex-col md:flex-row gap-12">
