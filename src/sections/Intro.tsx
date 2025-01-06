@@ -11,11 +11,12 @@ const Intro: React.FC = () => {
         >
             <div className="flex flex-col md:flex-row gap-12">
                 <div className="w-full md:w-1/2">
-                    <div className="relative h-96 xl:h-[60vh] overflow-hidden mb-6">
+                    <div className="relative h-96 xl:h-[60vh] overflow-hidden mb-6 mix-blend-multiply">
+                        <div className="absolute inset-0 w-full h-full bg-white opacity-10 z-10 mix-blend-luminosity"></div>
                         <img
                             src={PenangStreet}
                             alt="Penang Street"
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover contrast-[0.95]"
                         />
                     </div>
                     <p className="text-gray-500 text-sm mt-2">
@@ -42,10 +43,11 @@ const Intro: React.FC = () => {
                         and a lively blend of diverse cultures.
                     </p>
                     <div className="mt-6 relative h-96 xl:h-[60vh] overflow-hidden">
+                        <div className="absolute inset-0 w-full h-full bg-white opacity-10 z-10 mix-blend-luminosity"></div>
                         <img
                             src={Komtar}
                             alt="KOMTAR"
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="absolute inset-0 w-full h-full object-cover contrast-[0.95]"
                         />
                     </div>
                 </div>
