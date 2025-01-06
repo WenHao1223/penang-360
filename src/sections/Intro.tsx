@@ -1,5 +1,8 @@
 import React from "react";
 
+import Komtar from "@assets/images/intro/komtar.webp";
+import PenangStreet from "@assets/images/intro/penang-street.webp";
+
 const Intro: React.FC = () => {
     return (
         <section
@@ -10,8 +13,8 @@ const Intro: React.FC = () => {
                 <div className="w-full md:w-1/2">
                     <div className="relative h-96 xl:h-[60vh] overflow-hidden mb-6">
                         <img
-                            src="https://websitedemos.net/travel-and-tourism-02/wp-content/uploads/sites/840/2021/05/about-us.jpg"
-                            alt="Mykonos"
+                            src={PenangStreet}
+                            alt="Penang Street"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                     </div>
@@ -40,8 +43,8 @@ const Intro: React.FC = () => {
                     </p>
                     <div className="mt-6 relative h-96 xl:h-[60vh] overflow-hidden">
                         <img
-                            src="https://websitedemos.net/travel-and-tourism-02/wp-content/uploads/sites/840/2021/05/about-us-2-1.jpg"
-                            alt="Mykonos"
+                            src={Komtar}
+                            alt="KOMTAR"
                             className="absolute inset-0 w-full h-full object-cover"
                         />
                     </div>

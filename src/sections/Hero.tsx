@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import LogoTrimmed from "@assets/logo/logo-trimmed.png";
-import PenangBridge from "@assets/hero/penang-bridge.jpg";
+import PenangBridge from "@assets/images/hero/penang-bridge.webp";
 
 const Hero: React.FC = () => {
     const textRef = useRef<HTMLSpanElement>(null);
