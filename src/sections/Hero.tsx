@@ -229,7 +229,7 @@ const Hero: React.FC = () => {
                             }}
                         />
                     </div>
-                    <div className="absolute inset-x-0 top-0 -z-20 w-screen h-screen overflow-hidden mix-blend-overlay">
+                    <div className="absolute inset-x-0 top-0 -z-20 h-screen overflow-hidden mix-blend-overlay">
                         <div
                             ref={imageRef}
                             className="relative w-full h-full opacity-30 blur-sm"
