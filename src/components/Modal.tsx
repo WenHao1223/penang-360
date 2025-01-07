@@ -17,12 +17,12 @@ interface AttractionType {
     rating: number;
 }
 
-interface AttractionModalProps {
+interface ModalProps {
     attraction: AttractionType;
     onClose: () => void;
 }
 
-const AttractionModal: React.FC<AttractionModalProps> = ({
+const Modal: React.FC<ModalProps> = ({
     attraction,
     onClose,
 }) => {
@@ -192,4 +192,4 @@ const AttractionModal: React.FC<AttractionModalProps> = ({
     );
 };
 
-export default AttractionModal;
+export default Modal;

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import attractionsData from "@assets/data/attractions.json"; // Import the JSON data
-import AttractionModal from "@components/AttractionModal"; // Import the AttractionModal component
+import Modal from "@components/Modal"; // Import the Modal component
 import AsyncImage from "../components/AsyncImage";
 
 interface AttractionType {
@@ -161,7 +161,7 @@ const Attractions: React.FC = () => {
                 </div>
             </div>
             {selectedAttraction && (
-                <AttractionModal
+                <Modal
                     attraction={selectedAttraction}
                     onClose={handleCloseModal}
                 />
