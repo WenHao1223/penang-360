@@ -228,7 +228,6 @@ const Hero: React.FC = () => {
                         }}
                     />
                 </div>
-                75
                 <div className="absolute inset-x-0 top-0 -z-20 h-screen overflow-hidden mix-blend-overlay min-h-[720px]">
                     <div
                         ref={imageRef}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Masonry from "@mui/lab/Masonry";
+import FoodJSON from "@assets/data/food.json";
 
 interface MasonryProps {
     more: boolean;
@@ -13,6 +14,7 @@ const PhotoGallery: React.FC<MasonryProps> = ({
     name,
 }) => {
     const [photos, setPhotos] = useState<string[]>([]);
+    const [foodNames, setFoodNames] = useState<string[]>([]);
 
     useEffect(() => {
         const loadImages = async () => {
@@ -32,20 +34,38 @@ const PhotoGallery: React.FC<MasonryProps> = ({
             setPhotos(loadedPhotos);
         };
 
+        const loadFoodImages = async () => {
+            const loadedPhotos: string[] = [];
+            const loadedFoodNames: string[] = [];
+            for (const food of FoodJSON) {
+                try {
+                    const image = await import(
+                        `@assets/images/food/${food.name}/thumbnail.webp`
+                    );
+                    loadedPhotos.push(image.default);
+                    loadedFoodNames.push(food.name);
+                } catch (error) {
+                    console.error("Error loading image:", error);
+                }
+            }
+            setPhotos(loadedPhotos);
+            setFoodNames(loadedFoodNames);
+        };
+
         if (section && name) {
             loadImages();
-        }
-        else {
-            setPhotos([
-                "https://themewagon.github.io/photogallery/img/gallery/1.jpg",
-                "https://themewagon.github.io/photogallery/img/gallery/2.jpg",
-                "https://themewagon.github.io/photogallery/img/gallery/3.jpg",
-                "https://themewagon.github.io/photogallery/img/gallery/4.jpg",
-                "https://themewagon.github.io/photogallery/img/gallery/5.jpg",
-                "https://themewagon.github.io/photogallery/img/gallery/6.jpg",
-            ]);
+        } else {
+            loadFoodImages();
+            console.log(foodNames)
         }
     }, [section, name]);
+
+    useEffect(() => {
+        console.log(photos);
+    }, [photos]);
+    useEffect(() => {
+        console.log(foodNames);
+    }, [foodNames]);
 
     const getColumns = () => {
         const width = window.innerWidth;
@@ -79,11 +99,11 @@ const PhotoGallery: React.FC<MasonryProps> = ({
                 {photos.map((photo, index) => (
                     <div key={index} className="relative group">
                         {more && (
-                            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 className="text-xl font-semibold mb-2">
-                                    Delicious Food Name
+                            <div className="absolute bg-black/60 inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 className="text-xl font-semibold mb-2 text-white p-2 text-center">
+                                    {foodNames[index]}
                                 </h3>
-                                <button className="btn mt-4 rounded-none text-white px-8">
+                                <button className="btn mt-4 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8">
                                     View
                                 </button>
                             </div>
