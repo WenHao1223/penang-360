@@ -27,7 +27,7 @@ const Intro: React.FC = () => {
                         cheerfully decorated trishaws found at nearly every
                         corner and enjoy a charming tour of this unique city.
                     </p>
-                    <button className="btn mt-4 rounded-none text-white px-8">
+                    <button className="btn mt-4 rounded-none text-white px-8 hover:text-black hover:bg-white">
                         Read More
                     </button>
                 </div>

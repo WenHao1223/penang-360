@@ -1,10 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import attractionsData from "@assets/data/attractions.json"; // Import the JSON data
+
+interface AttractionType {
+    name: string;
+    description: string;
+    operationHours: {
+        opening: string;
+        closing: string;
+    };
+    phoneNumber: string;
+    address: string;
+    city: string;
+    websiteLink: string;
+    rating: number;
+}
 
 const Attractions: React.FC = () => {
     const headerRef = useRef<HTMLDivElement>(null);
     const carouselRef = useRef<HTMLDivElement>(null);
-    const [selectedAttraction, setSelectedAttraction] = useState<string | null>(null);
+    const [selectedAttraction, setSelectedAttraction] =
+        useState<AttractionType | null>(null);
 
     useEffect(() => {
         gsap.to(headerRef.current, {
@@ -30,7 +46,7 @@ const Attractions: React.FC = () => {
         carousel?.scrollBy({ left: 300, behavior: "smooth" });
     };
 
-    const handleCardClick = (attraction: string) => {
+    const handleCardClick = (attraction: AttractionType) => {
         setSelectedAttraction(attraction);
     };
 
@@ -58,90 +74,29 @@ const Attractions: React.FC = () => {
                 className="relative z-10 opacity-0 max-w-full xl:max-w-5xl lg:max-w-3xl md:max-w-2xl sm:max-w-xl xs:max-w-sm min-w-[300px]"
             >
                 <div className="carousel carousel-center w-full rounded-box space-x-4 pb-4">
-                    <div className="carousel-item">
-                        <div 
-                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
-                            onClick={() => handleCardClick("Attraction 1")}
-                        >
-                            <figure>
-                                <img
-                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                    alt="Shoes"
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2 text-gray-700">
-                                    Attraction 1
-                                </h3>
-                                <p className="text-gray-400">
-                                    Description of attraction 1.
-                                </p>
+                    {attractionsData.map((attraction: AttractionType) => (
+                        <div key={attraction.name} className="carousel-item">
+                            <div
+                                className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                                onClick={() => handleCardClick(attraction)}
+                            >
+                                <figure>
+                                    <img
+                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                        alt={attraction.name}
+                                    />
+                                </figure>
+                                <div className="card-body">
+                                    <h3 className="text-xl font-bold mb-2 text-gray-700">
+                                        {attraction.name}
+                                    </h3>
+                                    <p className="text-gray-400">
+                                        {attraction.description}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div 
-                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
-                            onClick={() => handleCardClick("Attraction 2")}
-                        >
-                            <figure>
-                                <img
-                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                    alt="Shoes"
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2 text-gray-700">
-                                    Attraction 2
-                                </h3>
-                                <p className="text-gray-400">
-                                    Description of attraction 2.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div 
-                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
-                            onClick={() => handleCardClick("Attraction 3")}
-                        >
-                            <figure>
-                                <img
-                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                    alt="Shoes"
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2 text-gray-700">
-                                    Attraction 3
-                                </h3>
-                                <p className="text-gray-400">
-                                    Description of attraction 3.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div 
-                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
-                            onClick={() => handleCardClick("Attraction 4")}
-                        >
-                            <figure>
-                                <img
-                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                    alt="Shoes"
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2 text-gray-700">
-                                    Attraction 4
-                                </h3>
-                                <p className="text-gray-400">
-                                    Description of attraction 4.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
                 <div className="flex justify-between mt-4">
                     <button
@@ -160,15 +115,65 @@ const Attractions: React.FC = () => {
             </div>
             {selectedAttraction && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="bg-white p-8 rounded-lg shadow-lg">
-                        <h2 className="text-2xl font-bold mb-4">{selectedAttraction}</h2>
-                        <p className="text-gray-600">More information about {selectedAttraction}.</p>
-                        <button
-                            onClick={handleCloseModal}
-                            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg"
-                        >
-                            Close
-                        </button>
+                    <div className="bg-white p-6 rounded-md shadow-lg w-[80vw] max-w-[800px] max-h-[90vh] overflow-y-auto">
+                        <img
+                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                            alt={selectedAttraction.name}
+                            className="h-72 w-full object-cover rounded-sm"
+                        />
+                        <h2 className="text-3xl font-bold mt-4 uppercase text-gray-600 tracking-wider">
+                            {selectedAttraction.name}
+                        </h2>
+                        <p className="text-gray-600 text-sm mt-2 mb-4">
+                            {selectedAttraction.city}
+                        </p>
+                        <p className="text-gray-600">
+                            {selectedAttraction.description}
+                        </p>
+                        <div className="my-4">
+                            <p className="text-gray-600">
+                                Operation Hours:{" "}
+                                {selectedAttraction.operationHours.opening} -{" "}
+                                {selectedAttraction.operationHours.closing}
+                            </p>
+                            <p className="text-gray-600">
+                                Phone: {selectedAttraction.phoneNumber}
+                            </p>
+                            <p className="text-gray-600">
+                                Address: {selectedAttraction.address},{" "}
+                                {selectedAttraction.city}
+                            </p>
+                            <p className="text-gray-600">
+                                Website:{" "}
+                                <a
+                                    href={selectedAttraction.websiteLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-500"
+                                >
+                                    {selectedAttraction.websiteLink}
+                                </a>
+                            </p>
+                            <p className="text-gray-600">
+                                Rating: {selectedAttraction.rating}
+                            </p>
+                        </div>
+                        <div className="flex justify-start space-x-4">
+                            <a
+                                href={selectedAttraction?.websiteLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn mt-4 rounded-none text-white px-8 hover:bg-gray-600"
+                            >
+                                Visit Website
+                            </a>
+                            <button
+                                onClick={handleCloseModal}
+                                className="btn mt-4 rounded-none px-8 text-black bg-white hover:bg-red-500 hover:text-white"
+                            >
+                                Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             )}

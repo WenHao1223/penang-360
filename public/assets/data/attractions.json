@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Penang Hill",
+        "description": "A hill resort comprising a group of peaks on Penang Island.",
+        "operationHours": {
+            "opening": "6:30 AM",
+            "closing": "11:00 PM"
+        },
+        "phoneNumber": "+60 4-828 8880",
+        "address": "Jalan Stesen Bukit Bendera, Air Itam",
+        "city": "George Town",
+        "websiteLink": "http://www.penanghill.gov.my",
+        "rating": 4.5
+    },
+    {
+        "name": "Kek Lok Si Temple",
+        "description": "A Buddhist temple situated in Air Itam in Penang.",
+        "operationHours": {
+            "opening": "8:30 AM",
+            "closing": "5:30 PM"
+        },
+        "phoneNumber": "+60 4-828 3317",
+        "address": "11500 Ayer Itam",
+        "city": "George Town",
+        "websiteLink": "http://www.kekloksitemple.com",
+        "rating": 4.7
+    },
+    {
+        "name": "Penang National Park",
+        "description": "A national park located on the northwest corner of Penang Island.",
+        "operationHours": {
+            "opening": "7:30 AM",
+            "closing": "6:00 PM"
+        },
+        "phoneNumber": "+60 4-881 3530",
+        "address": "Jalan Hassan Abas, Teluk Bahang",
+        "city": "George Town",
+        "websiteLink": "http://www.penangnationalpark.com",
+        "rating": 4.6
+    }
+]
