@@ -65,7 +65,7 @@ const Attractions: React.FC = () => {
                 <h2 className="text-3xl md:text-5xl md:py-0 py-5 font-bold text-black z-10 centa-one mb-6">
                     Places of Attraction
                 </h2>
-                <p className="text-gray-600 text-sm centa-one z-10">
+                <p className="text-gray-600 z-10">
                     Explore our attractions and learn more about our services
                     and how we can help you.
                 </p>
