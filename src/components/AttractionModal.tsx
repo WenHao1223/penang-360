@@ -70,36 +70,65 @@ const AttractionModal: React.FC<AttractionModalProps> = ({
                 <p className="text-gray-600 text-sm mt-2 mb-4">
                     {attraction.city}
                 </p>
-                <p className="text-gray-600">
-                    {attraction.description}
-                </p>
-                <div className="my-4">
-                    <p className="text-gray-600">
-                        Operation Hours:{" "}
-                        {attraction.operationHours.opening} -{" "}
-                        {attraction.operationHours.closing}
-                    </p>
-                    <p className="text-gray-600">
-                        Phone: {attraction.phoneNumber}
-                    </p>
-                    <p className="text-gray-600">
-                        Address: {attraction.address},{" "}
-                        {attraction.city}
-                    </p>
-                    <p className="text-gray-600">
-                        Website:{" "}
-                        <a
-                            href={attraction.websiteLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-500"
-                        >
-                            {attraction.websiteLink}
-                        </a>
-                    </p>
-                    <p className="text-gray-600">
-                        Rating: {attraction.rating}
-                    </p>
+                <p className="text-gray-600">{attraction.description}</p>
+                <div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p className="text-gray-600 font-bold">Operation Hours:</p>
+                        <p className="text-gray-600">
+                            {attraction.operationHours.opening} - {attraction.operationHours.closing}
+                        </p>
+                    </div>
+                    <div>
+                        <p className="text-gray-600 font-bold">Phone:</p>
+                        <p className="text-gray-600">{attraction.phoneNumber}</p>
+                    </div>
+                    <div>
+                        <p className="text-gray-600 font-bold">Address:</p>
+                        <p className="text-gray-600">
+                            {attraction.address}, {attraction.city}
+                        </p>
+                    </div>
+                    <div>
+                        <p className="text-gray-600 font-bold">Website:</p>
+                        <p className="text-gray-600">
+                            <a
+                                href={attraction.websiteLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-blue-500"
+                            >
+                                {attraction.websiteLink}
+                            </a>
+                        </p>
+                    </div>
+                    <div className="col-span-2">
+                        <p className="text-gray-600 font-bold">Rating:</p>
+                        <p className="text-gray-600">
+                            <span className="text-yellow-500">
+                                {[...Array(5)].map((_, i) => (
+                                    <i
+                                        key={i}
+                                        className={`fa-solid fa-star ${
+                                            i < Math.floor(attraction.rating)
+                                                ? "text-yellow-500"
+                                                : i < Math.ceil(attraction.rating)
+                                                ? "text-yellow-500"
+                                                : "text-gray-300"
+                                        }`}
+                                        style={{
+                                            clipPath:
+                                                i < Math.floor(attraction.rating)
+                                                    ? "none"
+                                                    : i < Math.ceil(attraction.rating)
+                                                    ? `inset(0 ${100 - (attraction.rating % 1) * 100}% 0 0)`
+                                                    : "none",
+                                        }}
+                                    />
+                                ))}
+                            </span>{" "}
+                            ({attraction.rating})
+                        </p>
+                    </div>
                 </div>
                 <div className="flex justify-start space-x-4">
                     <a
@@ -118,8 +147,7 @@ const AttractionModal: React.FC<AttractionModalProps> = ({
                             handleMouseLeave(websiteButtonRef, "black")
                         }
                     >
-                        <i className="fa-solid fa-browser" /> Visit
-                        Website
+                        <i className="fa-solid fa-browser" /> Visit Website
                     </a>
                     <button
                         onClick={onClose}
