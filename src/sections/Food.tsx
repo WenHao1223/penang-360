@@ -28,7 +28,7 @@ const Food: React.FC = () => {
             </div>
             <div
                 ref={boxRef}
-                className="z-10 px-10 relative -top-5 bg-white shadow-lg rounded-lg opacity-0 w-full h-[70vh] max-w-[1200px] overflow-y-auto"
+                className="z-10 px-10 flex justify-center pt-8 relative -top-5 bg-white shadow-lg rounded-lg opacity-0 w-full h-[70vh] max-w-[1200px] overflow-y-auto"
             >
                 <PhotoGallery more={true} />
             </div>
