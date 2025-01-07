@@ -108,7 +108,7 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                     )}
                     {item.maps && (
                         <div>
-                            <p className="text-gray-600 font-bold">Website:</p>
+                            <p className="text-gray-600 font-bold">Maps:</p>
                             <p className="text-gray-600">
                                 <a
                                     href={item.maps}
@@ -210,7 +210,7 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                                 handleMouseLeave(websiteButtonRef, "black")
                             }
                         >
-                            <i className="fa-solid fa-browser" /> View on Maps
+                            <i className="fa-solid fa-map" /> View on Maps
                         </a>
                         <button
                             onClick={onClose}
