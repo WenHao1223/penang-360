@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Masonry from "@mui/lab/Masonry";
 
 const PhotoGallery: React.FC = () => {
@@ -11,13 +11,33 @@ const PhotoGallery: React.FC = () => {
         "https://themewagon.github.io/photogallery/img/gallery/6.jpg",
     ];
 
+    
+    const getColumns = () => {
+        const width = window.innerWidth;
+        if (width >= 768) return 3;
+        if (width >= 540) return 2;
+        return 1;
+    };
+    const [columns, setColumns] = useState(getColumns());
+    
+    useEffect(() => {
+        const handleResize = () => {
+            setColumns(getColumns());
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <>
             <Masonry
-                columns={4}
+                columns={columns}
                 spacing={2}
                 defaultHeight={450}
-                defaultColumns={4}
+                defaultColumns={3}
                 defaultSpacing={1}
             >
                 {photos.map((photo, index) => (
