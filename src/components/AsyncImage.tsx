@@ -20,7 +20,6 @@ const AsyncImage: React.FC<AsyncImageProps> = ({
     useEffect(() => {
         const loadImage = async () => {
             try {
-                console.log(`../assets/images/${section}/${name}/${id}.webp`);
                 const image = await import(
                     `@assets/images/${section}/${name}/${id}.webp`
                 );
