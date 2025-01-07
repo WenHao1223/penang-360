@@ -37,7 +37,7 @@ const Attractions: React.FC = () => {
                 className="relative z-10 text-center opacity-0"
             >
                 <h2 className="text-5xl font-bold text-black z-10 centa-one mb-6">
-                    Attractions
+                    Places of Attraction
                 </h2>
                 <p className="text-gray-600 text-sm centa-one z-10">
                     Explore our attractions and learn more about our services
@@ -50,7 +50,7 @@ const Attractions: React.FC = () => {
             >
                 <div className="carousel carousel-center w-full rounded-box space-x-4 pb-4">
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-xl">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -58,17 +58,17 @@ const Attractions: React.FC = () => {
                                 />
                             </figure>
                             <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2">
+                                <h3 className="text-xl font-bold mb-2 text-gray-700">
                                     Attraction 1
                                 </h3>
-                                <p className="text-gray-600">
+                                <p className="text-gray-400">
                                     Description of attraction 1.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-xl">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -76,17 +76,17 @@ const Attractions: React.FC = () => {
                                 />
                             </figure>
                             <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2">
+                                <h3 className="text-xl font-bold mb-2 text-gray-700">
                                     Attraction 2
                                 </h3>
-                                <p className="text-gray-600">
+                                <p className="text-gray-400">
                                     Description of attraction 2.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-xl">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -94,17 +94,17 @@ const Attractions: React.FC = () => {
                                 />
                             </figure>
                             <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2">
+                                <h3 className="text-xl font-bold mb-2 text-gray-700">
                                     Attraction 3
                                 </h3>
-                                <p className="text-gray-600">
+                                <p className="text-gray-400">
                                     Description of attraction 3.
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-xl">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -112,10 +112,10 @@ const Attractions: React.FC = () => {
                                 />
                             </figure>
                             <div className="card-body">
-                                <h3 className="text-xl font-bold mb-2">
+                                <h3 className="text-xl font-bold mb-2 text-gray-700">
                                     Attraction 4
                                 </h3>
-                                <p className="text-gray-600">
+                                <p className="text-gray-400">
                                     Description of attraction 4.
                                 </p>
                             </div>
