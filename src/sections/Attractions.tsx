@@ -50,7 +50,7 @@ const Attractions: React.FC = () => {
             >
                 <div className="carousel carousel-center w-full rounded-box space-x-4 pb-4">
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -68,7 +68,7 @@ const Attractions: React.FC = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -86,7 +86,7 @@ const Attractions: React.FC = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -104,7 +104,7 @@ const Attractions: React.FC = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105">
+                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
