@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import attractionsData from "@assets/data/attractions.json"; // Import the JSON data
+import AttractionModal from "@components/AttractionModal"; // Import the AttractionModal component
 
 interface AttractionType {
     name: string;
@@ -21,9 +22,6 @@ const Attractions: React.FC = () => {
     const carouselRef = useRef<HTMLDivElement>(null);
     const [selectedAttraction, setSelectedAttraction] =
         useState<AttractionType | null>(null);
-
-    const websiteButtonRef = useRef<HTMLAnchorElement>(null);
-    const closeButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         gsap.to(headerRef.current, {
@@ -55,35 +53,6 @@ const Attractions: React.FC = () => {
 
     const handleCloseModal = () => {
         setSelectedAttraction(null);
-    };
-
-    const handleMouseMove = (
-        e: React.MouseEvent<HTMLElement>,
-        buttonRef: React.RefObject<HTMLElement>,
-        gradientColors: string[]
-    ) => {
-        const rect = buttonRef.current?.getBoundingClientRect();
-        if (rect) {
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            console.log(x, y);
-            gsap.to(buttonRef.current, {
-                background: `radial-gradient(circle at ${x}px ${y}px, ${gradientColors[0]}, ${gradientColors[1]})`,
-                border: "none",
-                duration: 0.5,
-            });
-        }
-    };
-
-    const handleMouseLeave = (
-        buttonRef: React.RefObject<HTMLElement>,
-        defaultBackground: string
-    ) => {
-        gsap.to(buttonRef.current, {
-            background: defaultBackground,
-            outline: "2px solid black",
-            duration: 0.5,
-        });
     };
 
     return (
@@ -146,89 +115,10 @@ const Attractions: React.FC = () => {
                 </div>
             </div>
             {selectedAttraction && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="bg-white p-6 rounded-md shadow-lg w-[80vw] max-w-[800px] max-h-[90vh] overflow-y-auto">
-                        <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt={selectedAttraction.name}
-                            className="h-72 w-full object-cover rounded-sm"
-                        />
-                        <h2 className="text-3xl font-bold mt-4 uppercase text-gray-600 tracking-wide">
-                            {selectedAttraction.name}
-                        </h2>
-                        <p className="text-gray-600 text-sm mt-2 mb-4">
-                            {selectedAttraction.city}
-                        </p>
-                        <p className="text-gray-600">
-                            {selectedAttraction.description}
-                        </p>
-                        <div className="my-4">
-                            <p className="text-gray-600">
-                                Operation Hours:{" "}
-                                {selectedAttraction.operationHours.opening} -{" "}
-                                {selectedAttraction.operationHours.closing}
-                            </p>
-                            <p className="text-gray-600">
-                                Phone: {selectedAttraction.phoneNumber}
-                            </p>
-                            <p className="text-gray-600">
-                                Address: {selectedAttraction.address},{" "}
-                                {selectedAttraction.city}
-                            </p>
-                            <p className="text-gray-600">
-                                Website:{" "}
-                                <a
-                                    href={selectedAttraction.websiteLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-500"
-                                >
-                                    {selectedAttraction.websiteLink}
-                                </a>
-                            </p>
-                            <p className="text-gray-600">
-                                Rating: {selectedAttraction.rating}
-                            </p>
-                        </div>
-                        <div className="flex justify-start space-x-4">
-                            <a
-                                href={selectedAttraction?.websiteLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                ref={websiteButtonRef}
-                                className="btn mt-4 rounded-none border-none bg-black text-white px-8"
-                                onMouseMove={(e) =>
-                                    handleMouseMove(e, websiteButtonRef, [
-                                        "#ff7e5f",
-                                        "#feb47b",
-                                    ])
-                                }
-                                onMouseLeave={() =>
-                                    handleMouseLeave(websiteButtonRef, "black")
-                                }
-                            >
-                                <i className="fa-solid fa-browser" /> Visit
-                                Website
-                            </a>
-                            <button
-                                onClick={handleCloseModal}
-                                ref={closeButtonRef}
-                                className="btn mt-4 rounded-none outline-2 hover:outline-none px-8 text-black bg-white hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white"
-                                onMouseMove={(e) =>
-                                    handleMouseMove(e, closeButtonRef, [
-                                        "#ff0000",
-                                        "#ff000033",
-                                    ])
-                                }
-                                onMouseLeave={() =>
-                                    handleMouseLeave(closeButtonRef, "white")
-                                }
-                            >
-                                <i className="fa-solid fa-xmark" /> Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <AttractionModal
+                    attraction={selectedAttraction}
+                    onClose={handleCloseModal}
+                />
             )}
         </div>
     );
