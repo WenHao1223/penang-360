@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import PhotoGallery from "@components/PhotoGallery";
 import AsyncImage from "./AsyncImage";
 
-interface AttractionType {
+interface ItemType {
     name: string;
     description: string;
     operationHours: {
@@ -18,12 +18,12 @@ interface AttractionType {
 }
 
 interface ModalProps {
-    attraction: AttractionType;
+    item: ItemType;
     onClose: () => void;
 }
 
 const Modal: React.FC<ModalProps> = ({
-    attraction,
+    item,
     onClose,
 }) => {
     const websiteButtonRef = useRef<HTMLAnchorElement>(null);
@@ -62,51 +62,51 @@ const Modal: React.FC<ModalProps> = ({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-6 rounded-md shadow-lg w-[80vw] max-w-[800px] max-h-[90vh] overflow-y-auto">
                 <AsyncImage
-                    section="attractions"
-                    name={attraction.name}
+                    section="items"
+                    name={item.name}
                     id="thumbnail"
-                    alt={attraction.name + " Thumbnail"}
+                    alt={item.name + " Thumbnail"}
                     className="h-56 w-full object-cover rounded-sm"
                 />
                 <h2 className="text-3xl font-bold mt-4 uppercase text-gray-600 tracking-wide">
-                    {attraction.name}
+                    {item.name}
                 </h2>
                 <p className="text-gray-600 text-sm mt-2 mb-4">
-                    {attraction.city}
+                    {item.city}
                 </p>
-                <p className="text-gray-600">{attraction.description}</p>
+                <p className="text-gray-600">{item.description}</p>
                 <div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <p className="text-gray-600 font-bold">
                             Operation Hours:
                         </p>
                         <p className="text-gray-600">
-                            {attraction.operationHours.opening} -{" "}
-                            {attraction.operationHours.closing}
+                            {item.operationHours.opening} -{" "}
+                            {item.operationHours.closing}
                         </p>
                     </div>
                     <div>
                         <p className="text-gray-600 font-bold">Phone:</p>
                         <p className="text-gray-600">
-                            {attraction.phoneNumber}
+                            {item.phoneNumber}
                         </p>
                     </div>
                     <div>
                         <p className="text-gray-600 font-bold">Address:</p>
                         <p className="text-gray-600">
-                            {attraction.address}, {attraction.city}
+                            {item.address}, {item.city}
                         </p>
                     </div>
                     <div>
                         <p className="text-gray-600 font-bold">Website:</p>
                         <p className="text-gray-600">
                             <a
-                                href={attraction.websiteLink}
+                                href={item.websiteLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-blue-500"
                             >
-                                {attraction.websiteLink}
+                                {item.websiteLink}
                             </a>
                         </p>
                     </div>
@@ -118,25 +118,25 @@ const Modal: React.FC<ModalProps> = ({
                                     <i
                                         key={i}
                                         className={`fa-solid fa-star ${
-                                            i < Math.floor(attraction.rating)
+                                            i < Math.floor(item.rating)
                                                 ? "text-yellow-500"
                                                 : i <
-                                                  Math.ceil(attraction.rating)
+                                                  Math.ceil(item.rating)
                                                 ? "text-yellow-500"
                                                 : "text-gray-300"
                                         }`}
                                         style={{
                                             clipPath:
                                                 i <
-                                                Math.floor(attraction.rating)
+                                                Math.floor(item.rating)
                                                     ? "none"
                                                     : i <
                                                       Math.ceil(
-                                                          attraction.rating
+                                                          item.rating
                                                       )
                                                     ? `inset(0 ${
                                                           100 -
-                                                          (attraction.rating %
+                                                          (item.rating %
                                                               1) *
                                                               100
                                                       }% 0 0)`
@@ -145,13 +145,13 @@ const Modal: React.FC<ModalProps> = ({
                                     />
                                 ))}
                             </span>{" "}
-                            ({attraction.rating})
+                            ({item.rating})
                         </p>
                     </div>
                 </div>
                 <div className="flex justify-start space-x-4">
                     <a
-                        href={attraction?.websiteLink}
+                        href={item?.websiteLink}
                         target="_blank"
                         rel="noopener noreferrer"
                         ref={websiteButtonRef}
@@ -186,7 +186,7 @@ const Modal: React.FC<ModalProps> = ({
                     </button>
                 </div>
                 <hr className="my-4" />
-                <PhotoGallery section="attractions" name={attraction.name} />
+                <PhotoGallery section="items" name={item.name} />
             </div>
         </div>
     );
