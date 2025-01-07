@@ -39,7 +39,7 @@ const Attractions: React.FC = () => {
                 <h2 className="text-5xl font-bold text-black z-10 centa-one mb-6">
                     Attractions
                 </h2>
-                <p className="text-gray-600 text-sm centa-one z-10 mb-4">
+                <p className="text-gray-600 text-sm centa-one z-10">
                     Explore our attractions and learn more about our services
                     and how we can help you.
                 </p>
@@ -48,75 +48,77 @@ const Attractions: React.FC = () => {
                 ref={carouselRef}
                 className="relative z-10 opacity-0 max-w-full xl:max-w-5xl lg:max-w-3xl md:max-w-2xl sm:max-w-xl xs:max-w-sm min-w-[300px]"
             >
-                <div className="carousel carousel-center w-full rounded-box space-x-4 p-4">
+                <div className="carousel carousel-center w-full rounded-box space-x-4 pb-4">
                     <div className="carousel-item">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            <h3 className="text-xl font-bold mb-2">
-                                Attraction 1
-                            </h3>
-                            <p className="text-gray-600">
-                                Description of attraction 1.
-                            </p>
+                        <div className="card w-96 shadow-xl">
+                            <figure>
+                                <img
+                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                    alt="Shoes"
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Attraction 1
+                                </h3>
+                                <p className="text-gray-600">
+                                    Description of attraction 1.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            <h3 className="text-xl font-bold mb-2">
-                                Attraction 2
-                            </h3>
-                            <p className="text-gray-600">
-                                Description of attraction 2.
-                            </p>
+                        <div className="card w-96 shadow-xl">
+                            <figure>
+                                <img
+                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                    alt="Shoes"
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Attraction 2
+                                </h3>
+                                <p className="text-gray-600">
+                                    Description of attraction 2.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            <h3 className="text-xl font-bold mb-2">
-                                Attraction 3
-                            </h3>
-                            <p className="text-gray-600">
-                                Description of attraction 3.
-                            </p>
+                        <div className="card w-96 shadow-xl">
+                            <figure>
+                                <img
+                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                    alt="Shoes"
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Attraction 3
+                                </h3>
+                                <p className="text-gray-600">
+                                    Description of attraction 3.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            <h3 className="text-xl font-bold mb-2">
-                                Attraction 1
-                            </h3>
-                            <p className="text-gray-600">
-                                Description of attraction 1.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            <h3 className="text-xl font-bold mb-2">
-                                Attraction 1
-                            </h3>
-                            <p className="text-gray-600">
-                                Description of attraction 1.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            <h3 className="text-xl font-bold mb-2">
-                                Attraction 1
-                            </h3>
-                            <p className="text-gray-600">
-                                Description of attraction 1.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="carousel-item">
-                        <div className="bg-white shadow-md rounded-lg p-4">
-                            <h3 className="text-xl font-bold mb-2">
-                                Attraction 1
-                            </h3>
-                            <p className="text-gray-600">
-                                Description of attraction 1.
-                            </p>
+                        <div className="card w-96 shadow-xl">
+                            <figure>
+                                <img
+                                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                                    alt="Shoes"
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h3 className="text-xl font-bold mb-2">
+                                    Attraction 4
+                                </h3>
+                                <p className="text-gray-600">
+                                    Description of attraction 4.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
