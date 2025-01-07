@@ -162,7 +162,9 @@ const Attractions: React.FC = () => {
             </div>
             {selectedAttraction && (
                 <Modal
-                    attraction={selectedAttraction}
+                    item={selectedAttraction}
+                    section="attractions"
+                    name={selectedAttraction.name}
                     onClose={handleCloseModal}
                 />
             )}

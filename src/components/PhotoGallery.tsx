@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Masonry from "@mui/lab/Masonry";
 import FoodJSON from "@assets/data/food.json";
+import Modal from "@components/Modal";
+
+interface FoodType {
+    name: string;
+    description: string;
+    operationHours: {
+        opening: string;
+        closing: string;
+    };
+    phoneNumber: string;
+    address: string;
+    city: string;
+    rating: number;
+    maps: string;
+}
 
 interface MasonryProps {
     more: boolean;
@@ -15,6 +30,7 @@ const PhotoGallery: React.FC<MasonryProps> = ({
 }) => {
     const [photos, setPhotos] = useState<string[]>([]);
     const [foodNames, setFoodNames] = useState<string[]>([]);
+    const [selectedFood, setSelectedFood] = useState<FoodType | null>(null);
 
     useEffect(() => {
         const loadImages = async () => {
@@ -56,7 +72,7 @@ const PhotoGallery: React.FC<MasonryProps> = ({
             loadImages();
         } else {
             loadFoodImages();
-            console.log(foodNames)
+            console.log(foodNames);
         }
     }, [section, name]);
 
@@ -87,6 +103,14 @@ const PhotoGallery: React.FC<MasonryProps> = ({
         };
     }, []);
 
+    const viewFood = (food: FoodType) => {
+        setSelectedFood(food);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedFood(null);
+    };
+
     return (
         <>
             <Masonry
@@ -103,7 +127,10 @@ const PhotoGallery: React.FC<MasonryProps> = ({
                                 <h3 className="text-xl font-semibold mb-2 text-white p-2 text-center">
                                     {foodNames[index]}
                                 </h3>
-                                <button className="btn mt-4 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8">
+                                <button
+                                    className="btn mt-4 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
+                                    onClick={() => viewFood(FoodJSON[index])}
+                                >
                                     View
                                 </button>
                             </div>
@@ -116,6 +143,13 @@ const PhotoGallery: React.FC<MasonryProps> = ({
                     </div>
                 ))}
             </Masonry>
+            {selectedFood && (
+                <Modal
+                    item={selectedFood}
+                    section="food"
+                    onClose={handleCloseModal}
+                />
+            )}
         </>
     );
 };
