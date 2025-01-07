@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import attractionsData from "@assets/data/attractions.json"; // Import the JSON data
 import AttractionModal from "@components/AttractionModal"; // Import the AttractionModal component
+import AsyncImage from "../components/AsyncImage";
 
 interface AttractionType {
     name: string;
@@ -82,9 +83,12 @@ const Attractions: React.FC = () => {
                                 onClick={() => handleCardClick(attraction)}
                             >
                                 <figure>
-                                    <img
-                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                        alt={attraction.name}
+                                    <AsyncImage
+                                        section="attractions"
+                                        name={attraction.name}
+                                        id="thumbnail"
+                                        alt={attraction.name + " Thumbnail"}
+                                        className="w-full h-48 object-cover"
                                     />
                                 </figure>
                                 <div className="card-body">

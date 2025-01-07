@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
 import PhotoGallery from "@components/PhotoGallery";
+import AsyncImage from "./AsyncImage";
 
 interface AttractionType {
     name: string;
@@ -60,9 +61,11 @@ const AttractionModal: React.FC<AttractionModalProps> = ({
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
             <div className="bg-white p-6 rounded-md shadow-lg w-[80vw] max-w-[800px] max-h-[90vh] overflow-y-auto">
-                <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt={attraction.name}
+                <AsyncImage
+                    section="attractions"
+                    name={attraction.name}
+                    id="thumbnail"
+                    alt={attraction.name + " Thumbnail"}
                     className="h-56 w-full object-cover rounded-sm"
                 />
                 <h2 className="text-3xl font-bold mt-4 uppercase text-gray-600 tracking-wide">
@@ -183,7 +186,7 @@ const AttractionModal: React.FC<AttractionModalProps> = ({
                     </button>
                 </div>
                 <hr className="my-4" />
-                <PhotoGallery />
+                <PhotoGallery section="attractions" name={attraction.name} />
             </div>
         </div>
     );

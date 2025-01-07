@@ -3,6 +3,8 @@ import Masonry from "@mui/lab/Masonry";
 
 interface MasonryProps {
     more: boolean;
+    section?: string;
+    name?: string;
 }
 
 const PhotoGallery: React.FC<MasonryProps> = ({ more = false }) => {
@@ -56,6 +58,46 @@ const PhotoGallery: React.FC<MasonryProps> = ({ more = false }) => {
                             <h3 className="text-xl font-semibold mb-2 text-white">
                                 Delicious Food Name
                             </h3>
+                            <p className="text-gray-600 mt-2">
+                                <span className="text-yellow-500">
+                                    {[...Array(5)].map((_, i) => (
+                                        <i
+                                            key={i}
+                                            className={`fa-solid fa-star ${
+                                                i <
+                                                Math.floor(3.8)
+                                                    ? "text-yellow-500"
+                                                    : i <
+                                                      Math.ceil(
+                                                          3.8
+                                                      )
+                                                    ? "text-yellow-500"
+                                                    : "text-gray-300"
+                                            }`}
+                                            style={{
+                                                clipPath:
+                                                    i <
+                                                    Math.floor(
+                                                        3.8
+                                                    )
+                                                        ? "none"
+                                                        : i <
+                                                          Math.ceil(
+                                                              3.8
+                                                          )
+                                                        ? `inset(0 ${
+                                                              100 -
+                                                              (3.8 %
+                                                                  1) *
+                                                                  100
+                                                          }% 0 0)`
+                                                        : "none",
+                                            }}
+                                        />
+                                    ))}
+                                </span>{" "}
+                                ({3.8})
+                            </p>
                             <button className="btn mt-4 rounded-none text-black bg-white px-8 hover:bg-white hover:scale-105">
                                 View
                             </button>
