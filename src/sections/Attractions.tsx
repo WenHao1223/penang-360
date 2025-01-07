@@ -94,6 +94,48 @@ const Attractions: React.FC = () => {
                                     <p className="text-gray-400">
                                         {attraction.description}
                                     </p>
+                                    <p className="text-gray-600 mt-4">
+                                        <span className="text-yellow-500">
+                                            {[...Array(5)].map((_, i) => (
+                                                <i
+                                                    key={i}
+                                                    className={`fa-solid fa-star ${
+                                                        i <
+                                                        Math.floor(
+                                                            attraction.rating
+                                                        )
+                                                            ? "text-yellow-500"
+                                                            : i <
+                                                              Math.ceil(
+                                                                  attraction.rating
+                                                              )
+                                                            ? "text-yellow-500"
+                                                            : "text-gray-300"
+                                                    }`}
+                                                    style={{
+                                                        clipPath:
+                                                            i <
+                                                            Math.floor(
+                                                                attraction.rating
+                                                            )
+                                                                ? "none"
+                                                                : i <
+                                                                  Math.ceil(
+                                                                      attraction.rating
+                                                                  )
+                                                                ? `inset(0 ${
+                                                                      100 -
+                                                                      (attraction.rating %
+                                                                          1) *
+                                                                          100
+                                                                  }% 0 0)`
+                                                                : "none",
+                                                    }}
+                                                />
+                                            ))}
+                                        </span>{" "}
+                                        ({attraction.rating})
+                                    </p>
                                 </div>
                             </div>
                         </div>
