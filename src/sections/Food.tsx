@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import PhotoGallery from "../components/PhotoGallery";
 
 const Food: React.FC = () => {
     const titleRef = useRef<HTMLHeadingElement>(null);
@@ -27,9 +28,9 @@ const Food: React.FC = () => {
             </div>
             <div
                 ref={boxRef}
-                className="z-10 px-10 relative -top-5 bg-white shadow-lg rounded-lg opacity-0 w-full h-[70vh] max-w-[1200px]"
+                className="z-10 px-10 relative -top-5 bg-white shadow-lg rounded-lg opacity-0 w-full h-[70vh] max-w-[1200px] overflow-y-auto"
             >
-                
+                <PhotoGallery more={true} />
             </div>
         </div>
     );
