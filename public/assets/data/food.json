@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Penang Hill Restaurant",
+        "description": "A hill resort comprising a group of peaks on Penang Island.",
+        "operationHours": {
+            "opening": "6:30 AM",
+            "closing": "11:00 PM"
+        },
+        "phoneNumber": "+60 4-828 8880",
+        "address": "Jalan Stesen Bukit Bendera, Air Itam",
+        "city": "George Town",
+        "rating": 4.5,
+        "maps": "https://goo.gl/maps/example"
+    },
+    {
+        "name": "Another Restaurant",
+        "description": "A popular restaurant known for its delicious food.",
+        "operationHours": {
+            "opening": "8:00 AM",
+            "closing": "10:00 PM"
+        },
+        "phoneNumber": "+60 4-123 4567",
+        "address": "123 Main Street",
+        "city": "George Town",
+        "rating": 4.7,
+        "maps": "https://goo.gl/maps/example2"
+    },
+    {
+        "name": "Seaside Cafe",
+        "description": "A cozy cafe by the sea with a beautiful view.",
+        "operationHours": {
+            "opening": "7:00 AM",
+            "closing": "9:00 PM"
+        },
+        "phoneNumber": "+60 4-567 8901",
+        "address": "456 Beach Road",
+        "city": "Batu Ferringhi",
+        "rating": 4.6,
+        "maps": "https://goo.gl/maps/example3"
+    },
+    {
+        "name": "Mountain View Diner",
+        "description": "A diner with a stunning view of the mountains.",
+        "operationHours": {
+            "opening": "6:00 AM",
+            "closing": "10:00 PM"
+        },
+        "phoneNumber": "+60 4-234 5678",
+        "address": "789 Hilltop Avenue",
+        "city": "Balik Pulau",
+        "rating": 4.8,
+        "maps": "https://goo.gl/maps/example4"
+    },
+    {
+        "name": "City Central Bistro",
+        "description": "A bistro located in the heart of the city.",
+        "operationHours": {
+            "opening": "9:00 AM",
+            "closing": "11:00 PM"
+        },
+        "phoneNumber": "+60 4-345 6789",
+        "address": "101 City Center",
+        "city": "George Town",
+        "rating": 4.9,
+        "maps": "https://goo.gl/maps/example5"
+    }
+]

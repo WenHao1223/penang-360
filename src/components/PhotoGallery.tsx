@@ -35,6 +35,16 @@ const PhotoGallery: React.FC<MasonryProps> = ({
         if (section && name) {
             loadImages();
         }
+        else {
+            setPhotos([
+                "https://themewagon.github.io/photogallery/img/gallery/1.jpg",
+                "https://themewagon.github.io/photogallery/img/gallery/2.jpg",
+                "https://themewagon.github.io/photogallery/img/gallery/3.jpg",
+                "https://themewagon.github.io/photogallery/img/gallery/4.jpg",
+                "https://themewagon.github.io/photogallery/img/gallery/5.jpg",
+                "https://themewagon.github.io/photogallery/img/gallery/6.jpg",
+            ]);
+        }
     }, [section, name]);
 
     const getColumns = () => {
@@ -68,14 +78,16 @@ const PhotoGallery: React.FC<MasonryProps> = ({
             >
                 {photos.map((photo, index) => (
                     <div key={index} className="relative group">
-                        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 className="text-xl font-semibold mb-2">
-                                Delicious Food Name
-                            </h3>
-                            <button className="btn mt-4 rounded-none text-white px-8">
-                                View
-                            </button>
-                        </div>
+                        {more && (
+                            <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 className="text-xl font-semibold mb-2">
+                                    Delicious Food Name
+                                </h3>
+                                <button className="btn mt-4 rounded-none text-white px-8">
+                                    View
+                                </button>
+                            </div>
+                        )}
                         <img
                             src={photo}
                             alt={`Photo ${index + 1}`}
