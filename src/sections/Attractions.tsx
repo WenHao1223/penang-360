@@ -22,6 +22,9 @@ const Attractions: React.FC = () => {
     const [selectedAttraction, setSelectedAttraction] =
         useState<AttractionType | null>(null);
 
+    const websiteButtonRef = useRef<HTMLAnchorElement>(null);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
+
     useEffect(() => {
         gsap.to(headerRef.current, {
             y: -50,
@@ -52,6 +55,35 @@ const Attractions: React.FC = () => {
 
     const handleCloseModal = () => {
         setSelectedAttraction(null);
+    };
+
+    const handleMouseMove = (
+        e: React.MouseEvent<HTMLElement>,
+        buttonRef: React.RefObject<HTMLElement>,
+        gradientColors: string[]
+    ) => {
+        const rect = buttonRef.current?.getBoundingClientRect();
+        if (rect) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            console.log(x, y);
+            gsap.to(buttonRef.current, {
+                background: `radial-gradient(circle at ${x}px ${y}px, ${gradientColors[0]}, ${gradientColors[1]})`,
+                border: "none",
+                duration: 0.5,
+            });
+        }
+    };
+
+    const handleMouseLeave = (
+        buttonRef: React.RefObject<HTMLElement>,
+        defaultBackground: string
+    ) => {
+        gsap.to(buttonRef.current, {
+            background: defaultBackground,
+            outline: "2px solid black",
+            duration: 0.5,
+        });
     };
 
     return (
@@ -121,7 +153,7 @@ const Attractions: React.FC = () => {
                             alt={selectedAttraction.name}
                             className="h-72 w-full object-cover rounded-sm"
                         />
-                        <h2 className="text-3xl font-bold mt-4 uppercase text-gray-600 tracking-wider">
+                        <h2 className="text-3xl font-bold mt-4 uppercase text-gray-600 tracking-wide">
                             {selectedAttraction.name}
                         </h2>
                         <p className="text-gray-600 text-sm mt-2 mb-4">
@@ -163,15 +195,36 @@ const Attractions: React.FC = () => {
                                 href={selectedAttraction?.websiteLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn mt-4 rounded-none text-white px-8 hover:bg-gray-600"
+                                ref={websiteButtonRef}
+                                className="btn mt-4 rounded-none border-none bg-black text-white px-8"
+                                onMouseMove={(e) =>
+                                    handleMouseMove(e, websiteButtonRef, [
+                                        "#ff7e5f",
+                                        "#feb47b",
+                                    ])
+                                }
+                                onMouseLeave={() =>
+                                    handleMouseLeave(websiteButtonRef, "black")
+                                }
                             >
-                                <i className="fa-solid fa-browser"/> Visit Website
+                                <i className="fa-solid fa-browser" /> Visit
+                                Website
                             </a>
                             <button
                                 onClick={handleCloseModal}
-                                className="btn mt-4 rounded-none px-8 text-black bg-white hover:bg-red-500 hover:text-white"
+                                ref={closeButtonRef}
+                                className="btn mt-4 rounded-none outline-2 hover:outline-none px-8 text-black bg-white hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white"
+                                onMouseMove={(e) =>
+                                    handleMouseMove(e, closeButtonRef, [
+                                        "#ff0000",
+                                        "#ff000033",
+                                    ])
+                                }
+                                onMouseLeave={() =>
+                                    handleMouseLeave(closeButtonRef, "white")
+                                }
                             >
-                                <i className="fa-solid fa-xmark"/> Close
+                                <i className="fa-solid fa-xmark" /> Close
                             </button>
                         </div>
                     </div>
