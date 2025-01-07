@@ -30,13 +30,13 @@ const Attractions: React.FC = () => {
     };
 
     return (
-        <div className="section relative pt-10 px-16 md:px-32 lg:px-64 min-h-screen h-screen flex flex-col items-center justify-center gap-0">
+        <div className="section relative pt-10 px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
             <div className="absolute inset-0 z-0 bg-white"></div>
             <div
                 ref={headerRef}
                 className="relative z-10 text-center opacity-0"
             >
-                <h2 className="text-5xl font-bold text-black z-10 centa-one mb-6">
+                <h2 className="text-3xl md:text-5xl md:py-0 py-5 font-bold text-black z-10 centa-one mb-6">
                     Places of Attraction
                 </h2>
                 <p className="text-gray-600 text-sm centa-one z-10">
