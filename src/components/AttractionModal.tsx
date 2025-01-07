@@ -63,7 +63,7 @@ const AttractionModal: React.FC<AttractionModalProps> = ({
                 <img
                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                     alt={attraction.name}
-                    className="h-72 w-full object-cover rounded-sm"
+                    className="h-56 w-full object-cover rounded-sm"
                 />
                 <h2 className="text-3xl font-bold mt-4 uppercase text-gray-600 tracking-wide">
                     {attraction.name}
