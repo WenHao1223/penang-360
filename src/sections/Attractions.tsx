@@ -165,13 +165,13 @@ const Attractions: React.FC = () => {
                                 rel="noopener noreferrer"
                                 className="btn mt-4 rounded-none text-white px-8 hover:bg-gray-600"
                             >
-                                Visit Website
+                                <i className="fa-solid fa-browser"/> Visit Website
                             </a>
                             <button
                                 onClick={handleCloseModal}
                                 className="btn mt-4 rounded-none px-8 text-black bg-white hover:bg-red-500 hover:text-white"
                             >
-                                Close
+                                <i className="fa-solid fa-xmark"/> Close
                             </button>
                         </div>
                     </div>
