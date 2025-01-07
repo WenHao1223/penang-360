@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
 const Attractions: React.FC = () => {
     const headerRef = useRef<HTMLDivElement>(null);
     const carouselRef = useRef<HTMLDivElement>(null);
+    const [selectedAttraction, setSelectedAttraction] = useState<string | null>(null);
 
     useEffect(() => {
         gsap.to(headerRef.current, {
@@ -29,6 +30,14 @@ const Attractions: React.FC = () => {
         carousel?.scrollBy({ left: 300, behavior: "smooth" });
     };
 
+    const handleCardClick = (attraction: string) => {
+        setSelectedAttraction(attraction);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedAttraction(null);
+    };
+
     return (
         <div className="section relative pt-10 px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
             <div className="absolute inset-0 z-0 bg-white"></div>
@@ -50,7 +59,10 @@ const Attractions: React.FC = () => {
             >
                 <div className="carousel carousel-center w-full rounded-box space-x-4 pb-4">
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+                        <div 
+                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                            onClick={() => handleCardClick("Attraction 1")}
+                        >
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -68,7 +80,10 @@ const Attractions: React.FC = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+                        <div 
+                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                            onClick={() => handleCardClick("Attraction 2")}
+                        >
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -86,7 +101,10 @@ const Attractions: React.FC = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+                        <div 
+                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                            onClick={() => handleCardClick("Attraction 3")}
+                        >
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -104,7 +122,10 @@ const Attractions: React.FC = () => {
                         </div>
                     </div>
                     <div className="carousel-item">
-                        <div className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer">
+                        <div 
+                            className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                            onClick={() => handleCardClick("Attraction 4")}
+                        >
                             <figure>
                                 <img
                                     src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -137,6 +158,20 @@ const Attractions: React.FC = () => {
                     </button>
                 </div>
             </div>
+            {selectedAttraction && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 className="text-2xl font-bold mb-4">{selectedAttraction}</h2>
+                        <p className="text-gray-600">More information about {selectedAttraction}.</p>
+                        <button
+                            onClick={handleCloseModal}
+                            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
