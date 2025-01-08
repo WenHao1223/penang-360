@@ -145,20 +145,23 @@ const Attractions: React.FC = () => {
                         </div>
                     ))}
                 </div>
-                <div className="flex justify-between mt-4">
+            
+            <div className="absolute inset-0 top-0 right-0 w-full h-full z-50">
+                <div className="flex w-full h-full items-center justify-between">
                     <button
                         onClick={handlePrev}
-                        className="btn mt-4 w-16 rounded-full border-2 border-black bg-white text-black hover:text-white p-4 flex items-center justify-center"
+                        className="btn mt-4 ms-2 w-8 rounded-md border-none bg-black text-white hover:bg-red-500 p-2 flex items-center justify-center"
                     >
                         <i className="fa-solid fa-chevron-left"></i>
                     </button>
                     <button
                         onClick={handleNext}
-                        className="btn mt-4 w-16 rounded-full border-2 border-black bg-white text-black hover:text-white p-4 flex items-center justify-center"
+                        className="btn mt-4 me-2 w-8 rounded-md border-none bg-black text-white hover:bg-red-500 p-2 flex items-center justify-center"
                     >
                         <i className="fa-solid fa-chevron-right"></i>
                     </button>
                 </div>
+            </div>
             </div>
             {selectedAttraction && (
                 <Modal
