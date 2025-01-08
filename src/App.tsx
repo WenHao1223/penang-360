@@ -6,6 +6,7 @@ import Video from "@sections/Video";
 import Attractions from "@sections/Attractions";
 import Food from "@sections/Food";
 import Hotel from "@sections/Hotel";
+import Contact from "@sections/Contact";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
             <Attractions/>
             <Food/>
             <Hotel/>
+            <Contact/>
         </>
     );
 }
