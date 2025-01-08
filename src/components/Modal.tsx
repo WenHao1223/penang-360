@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import PhotoGallery from "@components/PhotoGallery";
 import AsyncImage from "./AsyncImage";
@@ -7,8 +7,10 @@ interface ItemType {
     name: string;
     description: string;
     operationHours: {
-        opening: string;
-        closing: string;
+        opening?: string;
+        closing?: string;
+        checkIn?: string;
+        checkOut?: string;
     };
     phoneNumber: string;
     address: string;
@@ -16,6 +18,9 @@ interface ItemType {
     websiteLink?: string;
     maps?: string;
     rating: number;
+    facilities?: string[];
+    avgPricePerNight?: number;
+    topRatedComment?: string;
 }
 
 interface ModalProps {
@@ -26,7 +31,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
     useEffect(() => {
-        document.body.classList.add('overflow-hidden');
+        document.body.classList.add("overflow-hidden");
     }, []);
 
     const websiteButtonRef = useRef<HTMLAnchorElement>(null);
@@ -74,17 +79,42 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                     {item.name}
                 </h2>
                 <p className="text-gray-600 text-sm mt-2 mb-4">{item.city}</p>
+                {item.facilities && (
+                    <div className="flex flex-wrap mt-2 gap-1">
+                        {item.facilities.map((facility, index) => (
+                            <span
+                                key={index}
+                                className="bg-gray-700 text-gray-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                            >
+                                {facility}
+                            </span>
+                        ))}
+                    </div>
+                )}
                 <p className="text-gray-600">{item.description}</p>
                 <div className="my-4 sm:grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <p className="text-gray-600 font-bold">
-                            Operation Hours:
-                        </p>
-                        <p className="text-gray-600">
-                            {item.operationHours.opening} -{" "}
-                            {item.operationHours.closing}
-                        </p>
-                    </div>
+                    {item.operationHours.opening && (
+                        <div>
+                            <p className="text-gray-600 font-bold">
+                                Operation Hours:
+                            </p>
+                            <p className="text-gray-600">
+                                {item.operationHours.opening} -{" "}
+                                {item.operationHours.closing}
+                            </p>
+                        </div>
+                    )}
+                    {item.operationHours.checkIn && (
+                        <div>
+                            <p className="text-gray-600 font-bold">
+                                Check-in / Check-out:
+                            </p>
+                            <p className="text-gray-600">
+                                {item.operationHours.checkIn} /{" "}
+                                {item.operationHours.checkOut}
+                            </p>
+                        </div>
+                    )}
                     <div>
                         <p className="text-gray-600 font-bold">Phone:</p>
                         <p className="text-gray-600">{item.phoneNumber}</p>

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import gsap from "gsap";
 import AsyncImage from "./AsyncImage";
+import Modal from "@components/Modal";
 
 interface Hotel {
     name: string;
@@ -26,6 +28,69 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
         hotel.topRatedComment.length > maxCommentLength
             ? hotel.topRatedComment.substring(0, maxCommentLength) + "..."
             : hotel.topRatedComment;
+    const [showDes, setShowDes] = React.useState(true);
+    const viewMoreButtonRef = React.useRef<HTMLButtonElement>(null);
+    const [modalOpen, setModalOpen] = React.useState(false);
+
+    useEffect(() => {
+        if (
+            window.innerWidth < 768 ||
+            window.matchMedia("(pointer: coarse)").matches
+        ) {
+            setShowDes(false);
+        } else {
+            setShowDes(true);
+        }
+    }, []);
+
+    window.addEventListener("resize", () => {
+        if (
+            window.innerWidth < 768 ||
+            window.matchMedia("(pointer: coarse)").matches
+        ) {
+            setShowDes(false);
+        } else {
+            setShowDes(true);
+        }
+    });
+
+    const handleMouseMove = (
+        e: React.MouseEvent<HTMLElement>,
+        buttonRef: React.RefObject<HTMLElement>,
+        gradientColors: string[]
+    ) => {
+        const rect = buttonRef.current?.getBoundingClientRect();
+        if (rect) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            gsap.to(buttonRef.current, {
+                background: `radial-gradient(circle at ${x}px ${y}px, ${gradientColors[0]}, ${gradientColors[1]})`,
+                border: "none",
+                duration: 0.5,
+            });
+        }
+    };
+
+    const handleMouseLeave = (
+        buttonRef: React.RefObject<HTMLElement>,
+        defaultBackground: string
+    ) => {
+        gsap.to(buttonRef.current, {
+            background: defaultBackground,
+            outline: "2px solid black",
+            duration: 0.5,
+        });
+    };
+
+    const handleOpenModal = () => {
+        setModalOpen(true);
+        document.body.classList.add("overflow-hidden");
+    }
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+        document.body.classList.remove("overflow-hidden");
+    }
 
     return (
         <div className="relative group w-full h-96 bg-gray-200 rounded-lg overflow-hidden shadow-md">
@@ -96,58 +161,87 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                         </span>
                     )}
                 </div>
-                <div className="hidden group-hover:block mt-2">
-                    <div className="mt-4">
-                        <p className="mt-2 text-sm">{hotel.description}</p>
-                        <div className="flex flex-wrap my-4 text-xs">
-                            <div className="w-full md:w-1/2 pr-2">
-                                <p className="mt-1">
-                                    <span className="font-semibold">
-                                        Operation Hours:{" "}
-                                    </span>
-                                    <span>
-                                        Check-in {hotel.operationHours.checkIn}{" "}
-                                        | Check-out{" "}
-                                        {hotel.operationHours.checkOut}
-                                    </span>
-                                </p>
-                                <p className="mt-1">
-                                    <span className="font-semibold">
-                                        Phone:{" "}
-                                    </span>
-                                    <span className="">
-                                        {hotel.phoneNumber}
-                                    </span>
-                                </p>
+                {showDes ? (
+                    <div className="hidden group-hover:block mt-2">
+                        <div className="mt-4">
+                            <p className="mt-2 text-sm">{hotel.description}</p>
+                            <div className="flex flex-wrap my-4 text-xs">
+                                <div className="w-full md:w-1/2 pr-2">
+                                    <p className="mt-1">
+                                        <span className="font-semibold">
+                                            Operation Hours:{" "}
+                                        </span>
+                                        <span>
+                                            Check-in{" "}
+                                            {hotel.operationHours.checkIn} |
+                                            Check-out{" "}
+                                            {hotel.operationHours.checkOut}
+                                        </span>
+                                    </p>
+                                    <p className="mt-1">
+                                        <span className="font-semibold">
+                                            Phone:{" "}
+                                        </span>
+                                        <span className="">
+                                            {hotel.phoneNumber}
+                                        </span>
+                                    </p>
+                                </div>
+                                <div className="w-full md:w-1/2 pl-2">
+                                    <p className="mt-1">
+                                        <span className="font-semibold">
+                                            Address:{" "}
+                                        </span>
+                                        <span>{hotel.address}</span>
+                                    </p>
+                                    <p className="mt-1">
+                                        <span className="font-semibold">
+                                            Facilities:{" "}
+                                        </span>
+                                        <span>
+                                            {hotel.facilities.join(", ")}
+                                        </span>
+                                    </p>
+                                </div>
                             </div>
-                            <div className="w-full md:w-1/2 pl-2">
-                                <p className="mt-1">
-                                    <span className="font-semibold">
-                                        Address:{" "}
-                                    </span>
-                                    <span>{hotel.address}</span>
-                                </p>
-                                <p className="mt-1">
-                                    <span className="font-semibold">
-                                        Facilities:{" "}
-                                    </span>
-                                    <span>{hotel.facilities.join(", ")}</span>
-                                </p>
-                            </div>
+                            <p className="mt-4 italic text-xs">
+                                "{truncatedComment}"
+                            </p>
+                            <p className="mt-2">
+                                <span className="text-sm font-semibold">
+                                    Avg. Price Per Night:{" "}
+                                </span>
+                                <span className="text-lg text-rose-500 font-bold">
+                                    RM{hotel.avgPricePerNight.toFixed(2)}
+                                </span>
+                            </p>
                         </div>
-                        <p className="mt-4 italic text-xs">
-                            "{truncatedComment}"
-                        </p>
-                        <p className="mt-2">
-                            <span className="text-sm font-semibold">
-                                Avg. Price Per Night:{" "}
-                            </span>
-                            <span className="text-lg text-rose-500 font-bold">
-                                RM{hotel.avgPricePerNight.toFixed(2)}
-                            </span>
-                        </p>
                     </div>
-                </div>
+                ) : (
+                    <button
+                        className="hidden group-hover:block btn mt-8 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
+                        onClick={() => handleOpenModal()}
+                        ref={viewMoreButtonRef}
+                        onMouseMove={(e) =>
+                            handleMouseMove(e, viewMoreButtonRef, [
+                                "#ff7e5f",
+                                "#feb47b",
+                            ])
+                        }
+                        onMouseLeave={() =>
+                            handleMouseLeave(viewMoreButtonRef, "white")
+                        }
+                    >
+                        Show More
+                    </button>
+                )}
+                {modalOpen && (
+                    <Modal
+                        item={hotel}
+                        section="hotels"
+                        onClose={handleCloseModal}
+                    />
+                )}
             </div>
         </div>
     );
