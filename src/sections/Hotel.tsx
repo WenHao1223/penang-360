@@ -28,38 +28,13 @@ const Hotel = () => {
     }, []);
 
     const handlePrev = () => {
-        const currentIndex = slides.current.findIndex(
-            (slide) => gsap.getProperty(slide, "xPercent") === 0
-        );
-        const prevIndex =
-            (currentIndex - 1 + slides.current.length) % slides.current.length;
-        animateSlides(prevIndex);
+        const swiper = document.querySelector('.swiper')?.swiper;
+        swiper?.slidePrev();
     };
 
     const handleNext = () => {
-        const currentIndex = slides.current.findIndex(
-            (slide) => gsap.getProperty(slide, "xPercent") === 0
-        );
-        const nextIndex = (currentIndex + 1) % slides.current.length;
-        animateSlides(nextIndex);
-    };
-
-    const animateSlides = (index: number) => {
-        const currentIndex = slides.current.findIndex(
-            (slide) => gsap.getProperty(slide, "xPercent") === 0
-        );
-        gsap.timeline()
-            .to(slides.current[currentIndex], {
-                xPercent: -100,
-                duration: 1,
-                ease: "power2.inOut",
-            })
-            .set(slides.current[currentIndex], { xPercent: 100 })
-            .to(slides.current[index], {
-                xPercent: 0,
-                duration: 1,
-                ease: "power2.inOut",
-            });
+        const swiper = document.querySelector('.swiper')?.swiper;
+        swiper?.slideNext();
     };
 
     return (
@@ -87,9 +62,9 @@ const Hotel = () => {
                     centeredSlides={true}
                     slidesPerView={"auto"}
                     coverflowEffect={{
-                        rotate: 50,
+                        rotate: 0,
                         stretch: 0,
-                        depth: 100,
+                        depth: 200,
                         modifier: 1,
                         slideShadows: true,
                     }}
@@ -125,6 +100,12 @@ const Hotel = () => {
                         <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
                     </SwiperSlide>
                 </Swiper>
+                <button onClick={handlePrev} className="absolute left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 rounded-full shadow-md z-20">
+                    <i className="fa fa-chevron-left"></i>
+                </button>
+                <button onClick={handleNext} className="absolute right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 rounded-full shadow-md z-20">
+                    <i className="fa fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     );
