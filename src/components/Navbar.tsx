@@ -85,7 +85,7 @@ const Navbar: React.FC = () => {
                         <a href="#" className="-m-1.5 p-1.5">
                             <span className="sr-only">Penang 360°</span>
                             <img
-                                className="h-8 w-auto object-contain"
+                                className="h-8 w-auto object-contain mix-blend-color"
                                 src={LogoTrimmed}
                                 alt="penang360-logo"
                             />
