@@ -79,7 +79,7 @@ const Attractions: React.FC = () => {
                     {attractionsData.map((attraction: AttractionType) => (
                         <div key={attraction.name} className="carousel-item">
                             <div
-                                className="card w-72 sm:w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                                className="card z-20 w-72 sm:w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
                                 onClick={() => handleCardClick(attraction)}
                             >
                                 <figure>
@@ -144,24 +144,23 @@ const Attractions: React.FC = () => {
                             </div>
                         </div>
                     ))}
+                    <div className="absolute inset-0 top-0 right-0 w-full h-full">
+                        <div className="flex w-full h-full items-center justify-between">
+                            <button
+                                onClick={handlePrev}
+                                className="btn mt-4 ms-2 w-8 z-50  rounded-md border-none bg-black text-white hover:bg-red-500 p-2 flex items-center justify-center"
+                            >
+                                <i className="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button
+                                onClick={handleNext}
+                                className="btn mt-4 me-2 w-8 z-50 rounded-md border-none bg-black text-white hover:bg-red-500 p-2 flex items-center justify-center"
+                            >
+                                <i className="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            
-            <div className="absolute inset-0 top-0 right-0 w-full h-full z-50">
-                <div className="flex w-full h-full items-center justify-between">
-                    <button
-                        onClick={handlePrev}
-                        className="btn mt-4 ms-2 w-8 rounded-md border-none bg-black text-white hover:bg-red-500 p-2 flex items-center justify-center"
-                    >
-                        <i className="fa-solid fa-chevron-left"></i>
-                    </button>
-                    <button
-                        onClick={handleNext}
-                        className="btn mt-4 me-2 w-8 rounded-md border-none bg-black text-white hover:bg-red-500 p-2 flex items-center justify-center"
-                    >
-                        <i className="fa-solid fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
             </div>
             {selectedAttraction && (
                 <Modal
