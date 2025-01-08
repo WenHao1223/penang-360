@@ -57,7 +57,7 @@ const Hotel = () => {
     };
 
     return (
-        <div className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
+        <div className="section relative pt-24 xl:pt-16 px-4 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
             <div className="absolute inset-0 z-0 bg-white"></div>
             <div
                 ref={headerRef}
@@ -105,13 +105,13 @@ const Hotel = () => {
                     </Swiper>
                     <button
                         onClick={handlePrev}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-3 rounded-full shadow-md z-20"
+                        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
                     >
                         <i className="fa fa-chevron-left"></i>
                     </button>
                     <button
                         onClick={handleNext}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-3 rounded-full shadow-md z-20"
+                        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
                     >
                         <i className="fa fa-chevron-right"></i>
                     </button>

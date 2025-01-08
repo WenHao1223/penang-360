@@ -38,7 +38,7 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
             />
             <div className="absolute inset-0 hover:bg-black group-hover:bg-black group-hover:bg-opacity-75 transition duration-300"></div>
             <div
-                className="absolute bottom-1 left-0 w-full py-6 px-20 hover:bg-gradient-to-t hover:transparent text-white
+                className="absolute bottom-1 left-0 w-full py-6 px-8 sm:px-12 md:px-20 hover:bg-gradient-to-t hover:transparent text-white
                     transition-all duration-300 group-hover:translate-y-[-5%]"
             >
                 <h3 className="text-xl font-bold">{hotel.name}</h3>
@@ -74,7 +74,7 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                         ({hotel.rating})
                     </span>
                 </p>
-                <div className="flex flex-wrap mt-2">
+                <div className="flex flex-wrap mt-2 gap-1">
                     {hotel.facilities
                         .slice(0, maxFacilitiesToShow)
                         .map((facility, index) => (
