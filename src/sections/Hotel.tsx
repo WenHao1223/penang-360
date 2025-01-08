@@ -7,6 +7,7 @@ import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import hotelsData from "@assets/data/hotels.json";
 import HotelCard from "@components/HotelCard";
+import Modal from "@components/Modal";
 
 interface Hotel {
     name: string;
@@ -29,6 +30,7 @@ const Hotel = () => {
     const headerRef = useRef<HTMLDivElement>(null);
     const carouselRef = useRef<HTMLDivElement>(null);
     const [hotels, setHotels] = useState<Hotel[]>([]);
+    const [selectedHotel, setSelectedHotel] = useState<Hotel | null>(null);
 
     useEffect(() => {
         gsap.to(headerRef.current, {
@@ -56,13 +58,20 @@ const Hotel = () => {
         swiper?.slideNext();
     };
 
+    const handleOpenModal = (hotel: Hotel) => {
+        setSelectedHotel(hotel);
+        document.body.classList.add("overflow-hidden");
+    };
+
+    const handleCloseModal = () => {
+        setSelectedHotel(null);
+        document.body.classList.remove("overflow-hidden");
+    };
+
     return (
         <div className="section relative pt-24 xl:pt-16 px-4 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
             <div className="absolute inset-0 z-0 bg-white"></div>
-            <div
-                ref={headerRef}
-                className="relative text-center opacity-0"
-            >
+            <div ref={headerRef} className="relative text-center opacity-0">
                 <h2 className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
                     Hotel
                 </h2>
@@ -75,48 +84,58 @@ const Hotel = () => {
                 ref={carouselRef}
                 className="relative w-full h-[28rem] overflow-hidden"
             >
-                    <Swiper
-                        effect={"coverflow"}
-                        grabCursor={true}
-                        centeredSlides={true}
-                        slidesPerView={"auto"}
-                        coverflowEffect={{
-                            rotate: 0,
-                            stretch: 0,
-                            depth: 200,
-                            modifier: 1,
-                            slideShadows: true,
-                        }}
-                        pagination={{
-                            clickable: true,
-                            el: ".swiper-pagination",
-                        }}
-                        modules={[EffectCoverflow, Pagination]}
-                        className="mySwiper"
-                    >
-                        {hotels.map((hotel, index) => (
-                            <SwiperSlide
-                                key={index}
-                                className="justify-center align-middle flex"
-                            >
-                                <HotelCard hotel={hotel} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    <button
-                        onClick={handlePrev}
-                        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
-                    >
-                        <i className="fa fa-chevron-left"></i>
-                    </button>
-                    <button
-                        onClick={handleNext}
-                        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
-                    >
-                        <i className="fa fa-chevron-right"></i>
-                    </button>
-                    <div className="swiper-pagination absolute bottom-4 w-full text-center"></div>
-                </div>
+                <Swiper
+                    effect={"coverflow"}
+                    grabCursor={true}
+                    centeredSlides={true}
+                    slidesPerView={"auto"}
+                    coverflowEffect={{
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 200,
+                        modifier: 1,
+                        slideShadows: true,
+                    }}
+                    pagination={{
+                        clickable: true,
+                        el: ".swiper-pagination",
+                    }}
+                    modules={[EffectCoverflow, Pagination]}
+                    className="mySwiper"
+                >
+                    {hotels.map((hotel, index) => (
+                        <SwiperSlide
+                            key={index}
+                            className="justify-center align-middle flex"
+                        >
+                            <HotelCard
+                                hotel={hotel}
+                                handleOpenModal={handleOpenModal}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+                <button
+                    onClick={handlePrev}
+                    className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
+                >
+                    <i className="fa fa-chevron-left"></i>
+                </button>
+                <button
+                    onClick={handleNext}
+                    className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
+                >
+                    <i className="fa fa-chevron-right"></i>
+                </button>
+                <div className="swiper-pagination absolute bottom-4 w-full text-center"></div>
+                {selectedHotel && (
+                    <Modal
+                        item={selectedHotel}
+                        section="hotels"
+                        onClose={handleCloseModal}
+                    />
+                )}
+            </div>
         </div>
     );
 };

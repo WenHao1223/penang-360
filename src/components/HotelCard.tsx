@@ -20,7 +20,10 @@ interface Hotel {
     topRatedComment: string;
 }
 
-const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
+const HotelCard: React.FC<{
+    hotel: Hotel;
+    handleOpenModal: (hotel: Hotel) => void;
+}> = ({ hotel, handleOpenModal }) => {
     const maxFacilitiesToShow = 3;
     const extraFacilitiesCount = hotel.facilities.length - maxFacilitiesToShow;
     const maxCommentLength = 200;
@@ -30,7 +33,6 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
             : hotel.topRatedComment;
     const [showDes, setShowDes] = React.useState(true);
     const viewMoreButtonRef = React.useRef<HTMLButtonElement>(null);
-    const [modalOpen, setModalOpen] = React.useState(false);
 
     useEffect(() => {
         if (
@@ -81,16 +83,6 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
             duration: 0.5,
         });
     };
-
-    const handleOpenModal = () => {
-        setModalOpen(true);
-        document.body.classList.add("overflow-hidden");
-    }
-
-    const handleCloseModal = () => {
-        setModalOpen(false);
-        document.body.classList.remove("overflow-hidden");
-    }
 
     return (
         <div className="relative group w-full h-96 bg-gray-200 rounded-lg overflow-hidden shadow-md">
@@ -220,7 +212,7 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                 ) : (
                     <button
                         className="hidden group-hover:block btn mt-8 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
-                        onClick={() => handleOpenModal()}
+                        onClick={() => handleOpenModal(hotel)}
                         ref={viewMoreButtonRef}
                         onMouseMove={(e) =>
                             handleMouseMove(e, viewMoreButtonRef, [
@@ -234,13 +226,6 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                     >
                         Show More
                     </button>
-                )}
-                {modalOpen && (
-                    <Modal
-                        item={hotel}
-                        section="hotels"
-                        onClose={handleCloseModal}
-                    />
                 )}
             </div>
         </div>
