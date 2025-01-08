@@ -63,10 +63,10 @@ const Attractions: React.FC = () => {
                 ref={headerRef}
                 className="relative z-10 text-center opacity-0"
             >
-                <h2 className="text-3xl md:text-5xl py-0 font-bold text-black z-10 centa-one mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
                     Places of Attraction
                 </h2>
-                <p className="text-gray-600 z-10">
+                <p className="text-gray-600">
                     Explore our attractions and learn more about our services
                     and how we can help you.
                 </p>
