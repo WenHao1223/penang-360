@@ -29,9 +29,13 @@ const Intro: React.FC = () => {
                         corner and enjoy a charming tour of this unique city.
                     </p>
                     {/* </div> */}
-                    <button className="btn mt-4 rounded-none text-white px-8 hover:text-black hover:bg-white">
+                    <a
+                        className="btn mt-4 rounded-none text-white px-8 hover:text-black hover:bg-white"
+                        href="https://mypenang.gov.my/"
+                        target="_blank"
+                    >
                         Read More
-                    </button>
+                    </a>
                 </div>
                 <hr className="border-t-1 border-gray-300 order-2 opacity-100 md:opacity-0" />
                 <div className="w-full md:w-1/2 order-1 md:order-3">
