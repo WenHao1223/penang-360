@@ -65,7 +65,7 @@ const Video: React.FC = () => {
             window.removeEventListener("resize", updateVideoDimensions);
     }, []);
 
-    return (
+return (
         <section
             className="section relative pt-24 xl:pt-16 px-4 sm:px-8 md:px-32 lg:px-64 min-h-screen h-screen flex flex-col items-center justify-center gap-0"
             id="video"

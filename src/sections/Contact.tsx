@@ -4,18 +4,18 @@ import LogoTrimmed from "@assets/logo/logo-trimmed.png";
 
 const Contact = () => {
     return (
-        <div className="section bg-neutral relative pt-10 px-16 md:px-32 lg:px-64 flex flex-col items-center justify-center gap-0">
+        <div className="section bg-neutral relative py-0 sm:py-8 sm:px-16 px-0 md:px-32 lg:px-64 flex flex-col items-center justify-center gap-0">
             <footer className="footer text-neutral-content p-10">
                 <aside>
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Penang 360°</span>
                         <img
-                            className="h-8 w-auto object-contain mix-blend-color"
+                            className="h-8 w-auto object-contain mix-blend-color-burn"
                             src={LogoTrimmed}
                             alt="penang360-logo"
                         />
                     </a>
-                    <p>
+                    <p className="text-sm mt-2">
                         Penang 360
                         <br />
                         Providing the best experience for you to explore Penang
