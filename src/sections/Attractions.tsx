@@ -57,13 +57,13 @@ const Attractions: React.FC = () => {
     };
 
     return (
-        <div className="section relative pt-10 px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
+        <div className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
             <div className="absolute inset-0 z-0 bg-white"></div>
             <div
                 ref={headerRef}
                 className="relative z-10 text-center opacity-0"
             >
-                <h2 className="text-3xl md:text-5xl md:py-0 py-5 font-bold text-black z-10 centa-one mb-6">
+                <h2 className="text-3xl md:text-5xl py-0 font-bold text-black z-10 centa-one mb-6">
                     Places of Attraction
                 </h2>
                 <p className="text-gray-600 z-10">
@@ -79,7 +79,7 @@ const Attractions: React.FC = () => {
                     {attractionsData.map((attraction: AttractionType) => (
                         <div key={attraction.name} className="carousel-item">
                             <div
-                                className="card w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+                                className="card w-72 sm:w-96 shadow-md transform transition-transform duration-300 hover:scale-105 cursor-pointer"
                                 onClick={() => handleCardClick(attraction)}
                             >
                                 <figure>
@@ -88,10 +88,10 @@ const Attractions: React.FC = () => {
                                         name={attraction.name}
                                         id="thumbnail"
                                         alt={attraction.name + " Thumbnail"}
-                                        className="w-full h-48 object-cover"
+                                        className="w-full h-40 xs:h-48 object-cover"
                                     />
                                 </figure>
-                                <div className="card-body">
+                                <div className="card-body h-auto">
                                     <h3 className="text-xl font-bold mb-2 text-gray-700">
                                         {attraction.name}
                                     </h3>
