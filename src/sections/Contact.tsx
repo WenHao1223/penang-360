@@ -16,7 +16,7 @@ const Contact = () => {
                         />
                     </a>
                     <p className="text-sm mt-2">
-                        Penang 360
+                        Penang 360°
                         <br />
                         Providing the best experience for you to explore Penang
                     </p>
