@@ -57,23 +57,23 @@ const Hotel = () => {
     };
 
     return (
-        <div className="section relative pt-10 px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
+        <div className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
             <div className="absolute inset-0 z-0 bg-white"></div>
             <div
                 ref={headerRef}
-                className="relative z-10 text-center opacity-0"
+                className="relative text-center opacity-0"
             >
-                <h2 className="text-3xl md:text-5xl md:py-0 py-5 font-bold text-black z-10 centa-one mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
                     Hotel
                 </h2>
-                <p className="text-gray-600 z-10">
+                <p className="text-gray-600">
                     Explore our hotel and learn more about our services and how
                     we can help you.
                 </p>
             </div>
             <div
                 ref={carouselRef}
-                className="relative z-10 w-full h-[28rem] overflow-hidden"
+                className="relative w-full h-[28rem] overflow-hidden"
             >
                     <Swiper
                         effect={"coverflow"}

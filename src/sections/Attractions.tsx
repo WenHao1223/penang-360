@@ -62,7 +62,7 @@ const Attractions: React.FC = () => {
             <div className="absolute inset-0 z-0 bg-white"></div>
             <div
                 ref={headerRef}
-                className="relative z-10 text-center opacity-0"
+                className="relative text-center opacity-0"
             >
                 <h2 className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
                     Places of Attraction
@@ -74,7 +74,7 @@ const Attractions: React.FC = () => {
             </div>
             <div
                 ref={carouselRef}
-                className="relative z-10 opacity-0 max-w-full xl:max-w-5xl lg:max-w-3xl md:max-w-2xl sm:max-w-xl xs:max-w-sm min-w-[300px]"
+                className="relative opacity-0 max-w-full xl:max-w-5xl lg:max-w-3xl md:max-w-2xl sm:max-w-xl xs:max-w-sm min-w-[300px]"
             >
                 <div className="carousel carousel-center w-full rounded-box space-x-4 pb-4">
                     {attractionsData.map((attraction: AttractionType) => (

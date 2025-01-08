@@ -64,18 +64,18 @@ const Video: React.FC = () => {
 
     return (
         <section
-            className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen h-screen flex flex-col items-center justify-center gap-0"
+            className="section relative pt-24 xl:pt-16 px-4 sm:px-8 md:px-32 lg:px-64 min-h-screen h-screen flex flex-col items-center justify-center gap-0"
             id="video"
         >
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white z-0" />
             </div>
-            <div className="relative z-10 text-center">
+            <div className="relative text-center">
                 <div ref={headerRef}>
-                    <h2 className="text-5xl font-bold text-black z-10 centa-one mb-6">
+                    <h2 className="text-4xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
                         Watch Our Video
                     </h2>
-                    <p className="text-gray-600 text-sm centa-one z-10 mb-4">
+                    <p className="text-gray-600 text-sm mb-4">
                         Watch our video to learn more about our services and how
                         we can help you.
                     </p>
@@ -83,7 +83,7 @@ const Video: React.FC = () => {
             </div>
             <div
                 ref={videoRef}
-                className="relative w-full max-w-3xl opacity-0 z-10 flex items-center justify-center"
+                className="relative w-full max-w-3xl opacity-0 flex items-center justify-center"
             >
                 <div className="relative mx-auto">
                     <iframe
