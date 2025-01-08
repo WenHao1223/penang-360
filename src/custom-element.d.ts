@@ -13,3 +13,13 @@ declare namespace JSX {
         };
     }
 }
+
+declare module "@assets/data/attractions.json" {
+    const value: any;
+    export default value;
+}
+
+declare module "@assets/data/food.json" {
+    const value: any;
+    export default value;
+}

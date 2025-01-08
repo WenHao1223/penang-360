@@ -164,7 +164,6 @@ const Attractions: React.FC = () => {
                 <Modal
                     item={selectedAttraction}
                     section="attractions"
-                    name={selectedAttraction.name}
                     onClose={handleCloseModal}
                 />
             )}

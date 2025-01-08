@@ -18,7 +18,7 @@ interface FoodType {
 }
 
 interface MasonryProps {
-    more: boolean;
+    more?: boolean;
     section?: string;
     name?: string;
 }
