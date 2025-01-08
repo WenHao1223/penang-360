@@ -71,7 +71,7 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                 </h2>
                 <p className="text-gray-600 text-sm mt-2 mb-4">{item.city}</p>
                 <p className="text-gray-600">{item.description}</p>
-                <div className="my-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="my-4 sm:grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                         <p className="text-gray-600 font-bold">
                             Operation Hours:
@@ -155,13 +155,13 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                     </div>
                 </div>
                 {item?.websiteLink && (
-                    <div className="flex justify-start space-x-4">
+                    <div className="sm:flex justify-start sm:space-x-4">
                         <a
                             href={item?.websiteLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             ref={websiteButtonRef}
-                            className="btn mt-4 rounded-none border-none bg-black text-white px-8"
+                            className="btn mt-4 rounded-none border-none bg-black text-white px-8 w-full sm:w-auto"
                             onMouseMove={(e) =>
                                 handleMouseMove(e, websiteButtonRef, [
                                     "#ff7e5f",
@@ -177,7 +177,9 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                         <button
                             onClick={onClose}
                             ref={closeButtonRef}
-                            className="btn mt-4 rounded-none outline-2 hover:outline-none px-8 text-black bg-white hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white"
+                            className="btn mt-4 rounded-none outline-2 hover:outline-none px-8 text-black
+                                bg-white hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white
+                                w-full sm:w-auto"
                             onMouseMove={(e) =>
                                 handleMouseMove(e, closeButtonRef, [
                                     "#ff0000",
