@@ -58,7 +58,7 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-md shadow-lg w-[80vw] max-w-[800px] max-h-[90vh] overflow-y-auto">
+            <div className="bg-white p-6 rounded-md shadow-lg w-[90vw] sm:w-[80vw] max-w-[800px] max-h-[90vh] overflow-y-auto">
                 <AsyncImage
                     section={section}
                     name={item.name}
@@ -195,13 +195,13 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                     </div>
                 )}
                 {item?.maps && (
-                    <div className="flex justify-start space-x-4">
+                    <div className="sm:flex justify-start sm:space-x-4">
                         <a
                             href={item?.maps}
                             target="_blank"
                             rel="noopener noreferrer"
                             ref={websiteButtonRef}
-                            className="btn mt-4 rounded-none border-none bg-black text-white px-8"
+                            className="btn mt-4 rounded-none border-none bg-black text-white px-8 w-full sm:w-auto"
                             onMouseMove={(e) =>
                                 handleMouseMove(e, websiteButtonRef, [
                                     "#ff7e5f",
@@ -217,7 +217,9 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                         <button
                             onClick={onClose}
                             ref={closeButtonRef}
-                            className="btn mt-4 rounded-none outline-2 hover:outline-none px-8 text-black bg-white hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white"
+                            className="btn mt-4 rounded-none outline-2 hover:outline-none px-8 text-black
+                                bg-white hover:bg-gradient-to-r from-red-500 to-red-700 hover:text-white
+                                w-full sm:w-auto"
                             onMouseMove={(e) =>
                                 handleMouseMove(e, closeButtonRef, [
                                     "#ff0000",
