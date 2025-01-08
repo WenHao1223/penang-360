@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Hotel Penang Paradise",
+        "description": "A luxurious hotel offering stunning views of the Penang skyline.",
+        "operationHours": {
+            "checkIn": "3:00 PM",
+            "checkOut": "12:00 PM"
+        },
+        "phoneNumber": "+60 4-123 4567",
+        "address": "123 Paradise Road",
+        "city": "George Town",
+        "rating": 4.8,
+        "maps": "https://goo.gl/maps/example1",
+        "facilities": ["Free WiFi", "Swimming Pool", "Spa", "Gym", "Restaurant"],
+        "avgPricePerNight": 150,
+        "topRatedComment": "Excellent service!"
+    },
+    {
+        "name": "Seaside Resort",
+        "description": "A beachfront resort perfect for a relaxing getaway.",
+        "operationHours": {
+            "checkIn": "2:00 PM",
+            "checkOut": "11:00 AM"
+        },
+        "phoneNumber": "+60 4-234 5678",
+        "address": "456 Seaside Avenue",
+        "city": "Batu Ferringhi",
+        "rating": 4.5,
+        "maps": "https://goo.gl/maps/example2",
+        "facilities": ["Beach Access", "Free Breakfast", "Swimming Pool", "Bar", "Free Parking"],
+        "avgPricePerNight": 200,
+        "topRatedComment": "Amazing views!"
+    },
+    {
+        "name": "Heritage Hotel",
+        "description": "A charming hotel located in the heart of George Town's heritage district.",
+        "operationHours": {
+            "checkIn": "3:00 PM",
+            "checkOut": "12:00 PM"
+        },
+        "phoneNumber": "+60 4-345 6789",
+        "address": "789 Heritage Street",
+        "city": "George Town",
+        "rating": 4.7,
+        "maps": "https://goo.gl/maps/example3",
+        "facilities": ["Free WiFi", "Restaurant", "Bar", "Laundry Service", "Airport Shuttle"],
+        "avgPricePerNight": 120,
+        "topRatedComment": "Great location!"
+    },
+    {
+        "name": "Mountain View Inn",
+        "description": "A cozy inn offering breathtaking views of Penang Hill.",
+        "operationHours": {
+            "checkIn": "4:00 PM",
+            "checkOut": "11:00 AM"
+        },
+        "phoneNumber": "+60 4-456 7890",
+        "address": "101 Mountain Road",
+        "city": "Air Itam",
+        "rating": 4.6,
+        "maps": "https://goo.gl/maps/example4",
+        "facilities": ["Free WiFi", "Free Parking", "Restaurant", "Room Service", "Garden"],
+        "avgPricePerNight": 100,
+        "topRatedComment": "Beautiful views!"
+    },
+    {
+        "name": "City Center Hotel",
+        "description": "A modern hotel located in the bustling city center.",
+        "operationHours": {
+            "checkIn": "3:00 PM",
+            "checkOut": "12:00 PM"
+        },
+        "phoneNumber": "+60 4-567 8901",
+        "address": "202 City Center Boulevard",
+        "city": "George Town",
+        "rating": 4.4,
+        "maps": "https://goo.gl/maps/example5",
+        "facilities": ["Free WiFi", "Gym", "Restaurant", "Bar", "Business Center"],
+        "avgPricePerNight": 130,
+        "topRatedComment": "Very convenient location!"
+    }
+]

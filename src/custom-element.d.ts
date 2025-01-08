@@ -23,3 +23,8 @@ declare module "@assets/data/food.json" {
     const value: any;
     export default value;
 }
+
+declare module "@assets/data/hotels.json" {
+    const value: any;
+    export default value;
+}
