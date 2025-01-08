@@ -1,15 +1,34 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
+import hotelsData from "@assets/data/hotels.json";
+import HotelCard from "@components/HotelCard";
+
+interface Hotel {
+    name: string;
+    description: string;
+    operationHours: {
+        checkIn: string;
+        checkOut: string;
+    };
+    phoneNumber: string;
+    address: string;
+    city: string;
+    rating: number;
+    maps: string;
+    facilities: string[];
+    avgPricePerNight: number;
+    topRatedComment: string;
+}
 
 const Hotel = () => {
     const headerRef = useRef<HTMLDivElement>(null);
     const carouselRef = useRef<HTMLDivElement>(null);
-    const slides = useRef<HTMLElement[]>([]);
+    const [hotels, setHotels] = useState<Hotel[]>([]);
 
     useEffect(() => {
         gsap.to(headerRef.current, {
@@ -24,16 +43,16 @@ const Hotel = () => {
             },
         });
 
-        slides.current = gsap.utils.toArray<HTMLElement>(".carousel-item");
+        setHotels(hotelsData);
     }, []);
 
     const handlePrev = () => {
-        const swiper = (document.querySelector('.swiper') as any)?.swiper;
+        const swiper = (document.querySelector(".swiper") as any)?.swiper;
         swiper?.slidePrev();
     };
 
     const handleNext = () => {
-        const swiper = (document.querySelector('.swiper') as any)?.swiper;
+        const swiper = (document.querySelector(".swiper") as any)?.swiper;
         swiper?.slideNext();
     };
 
@@ -54,60 +73,50 @@ const Hotel = () => {
             </div>
             <div
                 ref={carouselRef}
-                className="relative z-10 w-full h-96 overflow-hidden"
+                className="relative z-10 w-full h-[28rem] overflow-hidden"
             >
-                <Swiper
-                    effect={"coverflow"}
-                    grabCursor={true}
-                    centeredSlides={true}
-                    slidesPerView={"auto"}
-                    coverflowEffect={{
-                        rotate: 0,
-                        stretch: 0,
-                        depth: 200,
-                        modifier: 1,
-                        slideShadows: true,
-                    }}
-                    pagination={{ clickable: true, el: '.swiper-pagination' }}
-                    modules={[EffectCoverflow, Pagination]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-                    </SwiperSlide>
-                </Swiper>
-                <button onClick={handlePrev} className="absolute left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 rounded-full shadow-md z-20">
-                    <i className="fa fa-chevron-left"></i>
-                </button>
-                <button onClick={handleNext} className="absolute right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 rounded-full shadow-md z-20">
-                    <i className="fa fa-chevron-right"></i>
-                </button>
-                <div className="swiper-pagination absolute bottom-4 w-full text-center"></div>
-            </div>
+                    <Swiper
+                        effect={"coverflow"}
+                        grabCursor={true}
+                        centeredSlides={true}
+                        slidesPerView={"auto"}
+                        coverflowEffect={{
+                            rotate: 0,
+                            stretch: 0,
+                            depth: 200,
+                            modifier: 1,
+                            slideShadows: true,
+                        }}
+                        pagination={{
+                            clickable: true,
+                            el: ".swiper-pagination",
+                        }}
+                        modules={[EffectCoverflow, Pagination]}
+                        className="mySwiper"
+                    >
+                        {hotels.map((hotel, index) => (
+                            <SwiperSlide
+                                key={index}
+                                className="justify-center align-middle flex"
+                            >
+                                <HotelCard hotel={hotel} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <button
+                        onClick={handlePrev}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 rounded-full shadow-md z-20"
+                    >
+                        <i className="fa fa-chevron-left"></i>
+                    </button>
+                    <button
+                        onClick={handleNext}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 rounded-full shadow-md z-20"
+                    >
+                        <i className="fa fa-chevron-right"></i>
+                    </button>
+                    <div className="swiper-pagination absolute bottom-4 w-full text-center"></div>
+                </div>
         </div>
     );
 };
