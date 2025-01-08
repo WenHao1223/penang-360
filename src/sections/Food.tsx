@@ -19,7 +19,7 @@ const Food: React.FC = () => {
         <div className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
             <div className="absolute inset-0 bg-gradient-to-tr from-pink-100 to-white z-0"></div>
             <div className="z-10 flex flex-col items-center justify-center gap-4">
-                <h1 ref={titleRef} className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
+                <h1 ref={titleRef} className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one">
                     Food & Dining
                 </h1>
                 <p ref={descriptionRef} className="text-center text-gray-500">
@@ -28,7 +28,7 @@ const Food: React.FC = () => {
             </div>
             <div
                 ref={boxRef}
-                className="z-10 px-10 flex justify-center pt-8 relative -top-5 bg-white shadow-lg rounded-lg opacity-0 w-full h-[70vh] max-w-[1200px] overflow-y-auto"
+                className="z-10 px-10 flex justify-center pt-8 relative -top-5 bg-white shadow-lg rounded-lg opacity-0 w-full h-[70vh] max-w-[1200px] max-h-[800px] overflow-y-auto"
             >
                 <PhotoGallery more={true} />
             </div>
