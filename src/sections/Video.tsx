@@ -44,14 +44,17 @@ const Video: React.FC = () => {
             "vid-frame"
         ) as HTMLIFrameElement;
         if (vidFrame) {
-            vidFrame.width =
-                (
-                    document.getElementById("video")?.clientWidth! * 0.6
-                )?.toString() || "560";
-            vidFrame.height =
-                (
-                    document.getElementById("video")?.clientHeight! * 0.6
-                )?.toString() || "315";
+            const minWidth = 300;
+            const minHeight = 168.75;
+            const width =
+                document.getElementById("video")?.clientWidth! * 0.6 ||
+                minWidth;
+            const height =
+                document.getElementById("video")?.clientHeight! * 0.6 ||
+                minHeight;
+
+            vidFrame.width = Math.max(width, minWidth).toString();
+            vidFrame.height = Math.max(height, minHeight).toString();
         }
     };
 
