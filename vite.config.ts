@@ -8,10 +8,9 @@ export default defineConfig({
   resolve: {
     alias: {
       '@components': path.resolve(__dirname, 'src/components'),
-      '@interfaces': path.resolve(__dirname, 'src/interfaces'),
-      '@pages': path.resolve(__dirname, 'src/pages'),
-      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@sections': path.resolve(__dirname, 'src/sections'),
       '@styles': path.resolve(__dirname, 'src/styles'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
       '@assets': path.resolve(__dirname, 'public/assets'),
     }
   }
