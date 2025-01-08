@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import PhotoGallery from "@components/PhotoGallery";
 import AsyncImage from "./AsyncImage";
@@ -25,6 +25,10 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
+    useEffect(() => {
+        document.body.classList.add('overflow-hidden');
+    }, []);
+
     const websiteButtonRef = useRef<HTMLAnchorElement>(null);
     const closeButtonRef = useRef<HTMLButtonElement>(null);
 

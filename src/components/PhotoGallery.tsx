@@ -109,6 +109,7 @@ const PhotoGallery: React.FC<MasonryProps> = ({
 
     const handleCloseModal = () => {
         setSelectedFood(null);
+        document.body.classList.remove('overflow-hidden');
     };
 
     return (

@@ -54,6 +54,7 @@ const Attractions: React.FC = () => {
 
     const handleCloseModal = () => {
         setSelectedAttraction(null);
+        document.body.classList.remove('overflow-hidden');
     };
 
     return (
