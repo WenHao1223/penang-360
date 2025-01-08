@@ -28,12 +28,12 @@ const Hotel = () => {
     }, []);
 
     const handlePrev = () => {
-        const swiper = document.querySelector('.swiper')?.swiper;
+        const swiper = (document.querySelector('.swiper') as any)?.swiper;
         swiper?.slidePrev();
     };
 
     const handleNext = () => {
-        const swiper = document.querySelector('.swiper')?.swiper;
+        const swiper = (document.querySelector('.swiper') as any)?.swiper;
         swiper?.slideNext();
     };
 
@@ -68,7 +68,7 @@ const Hotel = () => {
                         modifier: 1,
                         slideShadows: true,
                     }}
-                    pagination={true}
+                    pagination={{ clickable: true, el: '.swiper-pagination' }}
                     modules={[EffectCoverflow, Pagination]}
                     className="mySwiper"
                 >
@@ -106,6 +106,7 @@ const Hotel = () => {
                 <button onClick={handleNext} className="absolute right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 rounded-full shadow-md z-20">
                     <i className="fa fa-chevron-right"></i>
                 </button>
+                <div className="swiper-pagination absolute bottom-4 w-full text-center"></div>
             </div>
         </div>
     );
