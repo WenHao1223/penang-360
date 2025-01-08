@@ -11,15 +11,25 @@ const Food: React.FC = () => {
         const timeline = gsap.timeline({ delay: 2 });
         timeline
             .to(titleRef.current, { y: -50, opacity: 1, duration: 1 })
-            .to(descriptionRef.current, { y: -50, opacity: 1, duration: 1 }, "-=0.5")
+            .to(
+                descriptionRef.current,
+                { y: -50, opacity: 1, duration: 1 },
+                "-=0.5"
+            )
             .to(boxRef.current, { opacity: 1, duration: 1 });
     }, []);
 
     return (
-        <div className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
+        <div
+            id="food"
+            className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0"
+        >
             <div className="absolute inset-0 bg-gradient-to-tr from-pink-100 to-white z-0"></div>
             <div className="z-10 flex flex-col items-center justify-center gap-4">
-                <h1 ref={titleRef} className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one">
+                <h1
+                    ref={titleRef}
+                    className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one"
+                >
                     Food & Dining
                 </h1>
                 <p ref={descriptionRef} className="text-center text-gray-500">

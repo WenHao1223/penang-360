@@ -69,7 +69,10 @@ const Hotel = () => {
     };
 
     return (
-        <div className="section relative pt-24 xl:pt-16 px-4 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0">
+        <div
+            id="hotel"
+            className="section relative pt-24 xl:pt-16 px-4 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0"
+        >
             <div className="absolute inset-0 z-0 bg-white"></div>
             <div ref={headerRef} className="relative text-center opacity-0">
                 <h2 className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">

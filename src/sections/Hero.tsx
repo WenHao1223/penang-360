@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import PenangBridge from "@assets/images/hero/penang-bridge.webp";
-import Navbar from "@components/Navbar";
 
 const Hero: React.FC = () => {
     const textRef = useRef<HTMLSpanElement>(null);
@@ -71,7 +70,6 @@ const Hero: React.FC = () => {
 
     return ( 
         <div className="bg-white min-h-screen">
-            <Navbar />
             <div className="relative isolate px-6 pt-14 lg:px-8">
                 <div
                     className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

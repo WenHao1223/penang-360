@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <header className="absolute inset-x-0 top-0 z-50">
+        <header id="navbar" className="inset-x-0 top-0 z-50 sticky h-0">
             <nav
                 className="flex items-center justify-between p-6 lg:px-8"
                 aria-label="Global"
@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
                     <a href="#" className="-m-1.5 p-1.5">
                         <span className="sr-only">Penang 360°</span>
                         <img
-                            className="h-8 w-auto"
+                            className="h-8 w-auto mix-blend-multiply"
                             src={LogoTrimmed}
                             alt="penang360-logo"
                         />
@@ -50,13 +50,25 @@ const Navbar: React.FC = () => {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                     <a
-                        href="#places-of-interest"
+                        href="#"
+                        className="text-sm/6 font-semibold text-gray-900"
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="#intro"
+                        className="text-sm/6 font-semibold text-gray-900"
+                    >
+                        About
+                    </a>
+                    <a
+                        href="#attractions"
                         className="text-sm/6 font-semibold text-gray-900"
                     >
                         Attractions
                     </a>
                     <a
-                        href="#dining"
+                        href="#food"
                         className="text-sm/6 font-semibold text-gray-900"
                     >
                         Dining
@@ -69,12 +81,7 @@ const Navbar: React.FC = () => {
                     </a>
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a
-                        href="#"
-                        className="text-sm/6 font-semibold text-gray-900"
-                    >
-                        Log in <span aria-hidden="true">→</span>
-                    </a>
+                    {/* Something at the right */}
                 </div>
             </nav>
             {/* Mobile menu, show/hide based on menu open state. */}
@@ -113,17 +120,29 @@ const Navbar: React.FC = () => {
                             </svg>
                         </button>
                     </div>
-                    <div className="mt-6 flow-root">
+                    <div className="mt-6 flow-root sticky top-0">
                         <div className="-my-6 divide-y divide-gray-500/10">
                             <div className="space-y-2 py-6">
                                 <a
-                                    href="#places-of-interest"
+                                    href="#"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                >
+                                    Home
+                                </a>
+                                <a
+                                    href="#intro"
+                                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                >
+                                    About
+                                </a>
+                                <a
+                                    href="#attractions"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                 >
                                     Attractions
                                 </a>
                                 <a
-                                    href="#dining"
+                                    href="#food"
                                     className="-mx-3 block rounded-lg px-3 p y-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                 >
                                     Dining
@@ -135,14 +154,9 @@ const Navbar: React.FC = () => {
                                     Hotel
                                 </a>
                             </div>
-                            <div className="py-6">
-                                <a
-                                    href="#"
-                                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                >
-                                    Log in
-                                </a>
-                            </div>
+                            {/* <div className="py-6">
+                                Something at the right
+                            </div> */}
                         </div>
                     </div>
                 </div>
