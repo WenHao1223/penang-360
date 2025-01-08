@@ -13,7 +13,7 @@
         "maps": "https://goo.gl/maps/example1",
         "facilities": ["Free WiFi", "Swimming Pool", "Spa", "Gym", "Restaurant"],
         "avgPricePerNight": 150,
-        "topRatedComment": "Excellent service!"
+        "topRatedComment": "Excellent service! The staff were incredibly friendly and helpful. The rooms were clean and comfortable, and the view from our room was breathtaking. We will definitely be coming back!"
     },
     {
         "name": "Seaside Resort",
@@ -27,9 +27,9 @@
         "city": "Batu Ferringhi",
         "rating": 4.5,
         "maps": "https://goo.gl/maps/example2",
-        "facilities": ["Beach Access", "Free Breakfast", "Swimming Pool", "Bar", "Free Parking"],
+        "facilities": ["Beach Access", "Free Breakfast", "Swimming Pool", "Bar"],
         "avgPricePerNight": 200,
-        "topRatedComment": "Amazing views!"
+        "topRatedComment": "Amazing views! The beach was just a few steps away from our room. The breakfast buffet had a great variety of options, and the pool area was very relaxing. Highly recommend!"
     },
     {
         "name": "Heritage Hotel",
@@ -43,9 +43,9 @@
         "city": "George Town",
         "rating": 4.7,
         "maps": "https://goo.gl/maps/example3",
-        "facilities": ["Free WiFi", "Restaurant", "Bar", "Laundry Service", "Airport Shuttle"],
+        "facilities": ["Free WiFi", "Restaurant", "Bar"],
         "avgPricePerNight": 120,
-        "topRatedComment": "Great location!"
+        "topRatedComment": "Great location! The hotel is situated in the heart of the heritage district, making it easy to explore the local attractions. The staff were very accommodating, and the room was spacious and well-maintained."
     },
     {
         "name": "Mountain View Inn",
@@ -61,7 +61,7 @@
         "maps": "https://goo.gl/maps/example4",
         "facilities": ["Free WiFi", "Free Parking", "Restaurant", "Room Service", "Garden"],
         "avgPricePerNight": 100,
-        "topRatedComment": "Beautiful views!"
+        "topRatedComment": "Beautiful views! The inn is located in a serene area with stunning views of Penang Hill. The garden was a lovely place to relax, and the room service was prompt and efficient. A perfect getaway!"
     },
     {
         "name": "City Center Hotel",
@@ -77,6 +77,6 @@
         "maps": "https://goo.gl/maps/example5",
         "facilities": ["Free WiFi", "Gym", "Restaurant", "Bar", "Business Center"],
         "avgPricePerNight": 130,
-        "topRatedComment": "Very convenient location!"
+        "topRatedComment": "Very convenient location! The hotel is right in the city center, making it easy to access shops, restaurants, and public transport. The gym was well-equipped, and the restaurant served delicious meals."
     }
 ]

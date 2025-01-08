@@ -37,9 +37,40 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                 className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 hover:bg-black group-hover:bg-black group-hover:bg-opacity-75 transition duration-300"></div>
-            <div className="absolute bottom-4 left-0 w-full p-4 hover:bg-gradient-to-t hover:from-black hover:to-transparent text-white">
+            <div className="absolute bottom-1 left-0 w-full p-6 hover:bg-gradient-to-t hover:from-black hover:to-transparent text-white">
                 <h3 className="text-xl font-bold">{hotel.name}</h3>
-                <p className="text-gray-300">{hotel.city}</p>
+                <p className="text-gray-300">
+                    <span className="text-sm">{hotel.city}</span>
+                    <span className="mx-2 text-sm">|</span>
+                    <span className="text-sm">
+                        <span className="text-yellow-500">
+                            {[...Array(5)].map((_, i) => (
+                                <i
+                                    key={i}
+                                    className={`fa-solid fa-star ${
+                                        i < Math.floor(hotel.rating)
+                                            ? "text-yellow-500"
+                                            : i < Math.ceil(hotel.rating)
+                                            ? "text-yellow-500"
+                                            : "text-gray-300"
+                                    }`}
+                                    style={{
+                                        clipPath:
+                                            i < Math.floor(hotel.rating)
+                                                ? "none"
+                                                : i < Math.ceil(hotel.rating)
+                                                ? `inset(0 ${
+                                                      100 -
+                                                      (hotel.rating % 1) * 100
+                                                  }% 0 0)`
+                                                : "none",
+                                    }}
+                                />
+                            ))}
+                        </span>{" "}
+                        ({hotel.rating})
+                    </span>
+                </p>
                 <div className="flex flex-wrap mt-2">
                     {hotel.facilities
                         .slice(0, maxFacilitiesToShow)
@@ -53,8 +84,8 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                         ))}
                     {extraFacilitiesCount > 0 && (
                         <span
-                            className="bg-gray-700 text-gray-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
-                            title={hotel.facilities
+                            className="bg-gray-700 text-gray-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded z-30 tooltip"
+                            data-tip={hotel.facilities
                                 .slice(maxFacilitiesToShow)
                                 .join(", ")}
                         >
@@ -64,7 +95,6 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                 </div>
             </div>
             <div className="absolute inset-0 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
-                <p className="text-lg font-bold">{hotel.rating} Stars</p>
                 <p className="mt-2">
                     Avg. Price per Night: RM {hotel.avgPricePerNight}
                 </p>
