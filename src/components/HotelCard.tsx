@@ -37,7 +37,10 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                 className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 hover:bg-black group-hover:bg-black group-hover:bg-opacity-75 transition duration-300"></div>
-            <div className="absolute bottom-1 left-0 w-full p-6 hover:bg-gradient-to-t hover:from-black hover:to-transparent text-white">
+            <div
+                className="absolute bottom-1 left-0 w-full py-6 px-20 hover:bg-gradient-to-t hover:transparent text-white
+                    transition-all duration-300 group-hover:translate-y-[-5%]"
+            >
                 <h3 className="text-xl font-bold">{hotel.name}</h3>
                 <p className="text-gray-300">
                     <span className="text-sm">{hotel.city}</span>
@@ -93,13 +96,58 @@ const HotelCard: React.FC<{ hotel: Hotel }> = ({ hotel }) => {
                         </span>
                     )}
                 </div>
-            </div>
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white opacity-0 group-hover:opacity-100 transition duration-300">
-                <p className="mt-2">
-                    Avg. Price per Night: RM {hotel.avgPricePerNight}
-                </p>
-                <p className="mt-2">"{truncatedComment}"</p>
-                <p className="mt-2">{hotel.description}</p>
+                <div className="hidden group-hover:block mt-2">
+                    <div className="mt-4">
+                        <p className="mt-2 text-sm">{hotel.description}</p>
+                        <div className="flex flex-wrap my-4 text-xs">
+                            <div className="w-full md:w-1/2 pr-2">
+                                <p className="mt-1">
+                                    <span className="font-semibold">
+                                        Operation Hours:{" "}
+                                    </span>
+                                    <span>
+                                        Check-in {hotel.operationHours.checkIn}{" "}
+                                        | Check-out{" "}
+                                        {hotel.operationHours.checkOut}
+                                    </span>
+                                </p>
+                                <p className="mt-1">
+                                    <span className="font-semibold">
+                                        Phone:{" "}
+                                    </span>
+                                    <span className="">
+                                        {hotel.phoneNumber}
+                                    </span>
+                                </p>
+                            </div>
+                            <div className="w-full md:w-1/2 pl-2">
+                                <p className="mt-1">
+                                    <span className="font-semibold">
+                                        Address:{" "}
+                                    </span>
+                                    <span>{hotel.address}</span>
+                                </p>
+                                <p className="mt-1">
+                                    <span className="font-semibold">
+                                        Facilities:{" "}
+                                    </span>
+                                    <span>{hotel.facilities.join(", ")}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <p className="mt-4 italic text-xs">
+                            "{truncatedComment}"
+                        </p>
+                        <p className="mt-2">
+                            <span className="text-sm font-semibold">
+                                Avg. Price Per Night:{" "}
+                            </span>
+                            <span className="text-lg text-rose-500 font-bold">
+                                RM{hotel.avgPricePerNight.toFixed(2)}
+                            </span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     );
