@@ -64,7 +64,7 @@ const Video: React.FC = () => {
 
     return (
         <section
-            className="section relative pt-10 px-16 md:px-32 lg:px-64 min-h-screen h-screen flex flex-col items-center justify-center gap-0"
+            className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen h-screen flex flex-col items-center justify-center gap-0"
             id="video"
         >
             <div className="absolute inset-0 z-0">
