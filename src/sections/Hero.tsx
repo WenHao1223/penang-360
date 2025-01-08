@@ -96,12 +96,12 @@ const Hero: React.FC = () => {
                         }}
                     ></div>
                 </div>
-                <div className="mx-auto max-w-2xl py-44 sm:py-40 xl:py-36 2xl:py-48 z-10">
+                <div className="mx-auto max-w-2xl py-28 z-10">
                     <div className="text-center">
-                        <h1 className="text-balance text-8xl text-black sm:text-9xl tangerine font-bold ">
+                        <h1 className="text-balance text-7xl md:text-8xl lg:9xl text-black tangerine font-bold ">
                             Penang 360°
                         </h1>
-                        <p className="mt-8 text-lg font-medium text-gray-500 sm:text-xl/8 tracking-wider">
+                        <p className="mt-8 text-sm md:text-md xl:text-lg font-medium text-gray-500 sm:text-xl/8 tracking-wider">
                             Penang, a vibrant Malaysian state, is known for its
                             rich heritage, stunning landscapes, bustling
                             streets, and serene beaches.
