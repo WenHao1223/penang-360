@@ -89,7 +89,7 @@ const HotelCard: React.FC<{
             <AsyncImage
                 section="hotels"
                 name={hotel.name}
-                id="1"
+                id="thumbnail"
                 alt={hotel.name}
                 className="absolute inset-0 w-full h-full object-cover"
             />
