@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
     };
 
     return (
-        <header id="navbar" className="inset-x-0 top-0 z-50 sticky h-0">
+        <header id="navbar" className="inset-x-0 top-0 z-40 sticky h-0">
             <nav
                 className="flex items-center justify-between p-6 lg:px-8"
                 aria-label="Global"

@@ -36,7 +36,7 @@ const HotelCard: React.FC<{
 
     useEffect(() => {
         if (
-            window.innerWidth < 768 ||
+            window.innerWidth < 1400 ||
             window.matchMedia("(pointer: coarse)").matches
         ) {
             setShowDes(false);
@@ -47,7 +47,7 @@ const HotelCard: React.FC<{
 
     window.addEventListener("resize", () => {
         if (
-            window.innerWidth < 768 ||
+            window.innerWidth < 1400 ||
             window.matchMedia("(pointer: coarse)").matches
         ) {
             setShowDes(false);
@@ -95,7 +95,7 @@ const HotelCard: React.FC<{
             />
             <div className="absolute inset-0 hover:bg-black group-hover:bg-black group-hover:bg-opacity-75 transition duration-300"></div>
             <div
-                className="absolute bottom-1 left-0 w-full py-6 px-8 sm:px-12 md:px-20 hover:bg-gradient-to-t hover:transparent text-white
+                className="absolute bottom-1 left-0 w-full py-0 md:py-2 px-8 sm:px-12 md:px-20 hover:bg-gradient-to-t hover:transparent text-white
                     transition-all duration-300 group-hover:translate-y-[-5%]"
             >
                 <h3 className="text-xl font-bold">{hotel.name}</h3>
