@@ -1,67 +1,133 @@
 [
     {
-        "name": "Penang Hill Restaurant",
-        "description": "A hill resort comprising a group of peaks on Penang Island.",
+        "name": "Ah Teik Char Koay Teow",
+        "description": "A famous stall known for its delicious char koay teow.",
         "operationHours": {
-            "opening": "6:30 AM",
+            "opening": "5:00 PM",
             "closing": "11:00 PM"
         },
-        "phoneNumber": "+60 4-828 8880",
-        "address": "Jalan Stesen Bukit Bendera, Air Itam",
+        "phoneNumber": "+60 16-495 3845",
+        "address": "1d, Lebuh Carnarvon",
         "city": "George Town",
         "rating": 4.5,
-        "maps": "https://goo.gl/maps/example"
+        "maps": "https://maps.app.goo.gl/GQ7urbX614serTxj9"
     },
     {
-        "name": "Another Restaurant",
-        "description": "A popular restaurant known for its delicious food.",
+        "name": "Boston Coffee",
+        "description": "A cozy cafe that serves a variety of coffee and pastries.",
         "operationHours": {
-            "opening": "8:00 AM",
+            "opening": "9:00 AM",
+            "closing": "12:00 AM"
+        },
+        "phoneNumber": "+60 4-210 8688",
+        "address": "257, Victoria St",
+        "city": "George Town",
+        "rating": 4.9,
+        "maps": "https://maps.app.goo.gl/X2FBFYpF1LHKqByE6"
+    },
+    {
+        "name": "Curry Mee Air Itam Market",
+        "description": "A popular spot for curry mee in Air Itam Market.",
+        "operationHours": {
+            "opening": "6:00 AM",
+            "closing": "12:30 PM"
+        },
+        "phoneNumber": "+60 16-499 3132",
+        "address": "Annex Market, 15, Jalan Air Itam",
+        "city": "Ayer Itam",
+        "rating": 4.7,
+        "maps": "https://maps.app.goo.gl/YEjBQNpgPPbZBCNv6"
+    },
+    {
+        "name": "Deens Maju Nasi Kandar",
+        "description": "Popular street stand known for nasi kandar, a traditional local favorite of rice & curries..",
+        "operationHours": {
+            "opening": "12:00 PM",
             "closing": "10:00 PM"
         },
-        "phoneNumber": "+60 4-123 4567",
-        "address": "123 Main Street",
+        "phoneNumber": "+60 12-425 2421",
+        "address": "170, Jalan Gurdwara",
         "city": "George Town",
-        "rating": 4.7,
-        "maps": "https://goo.gl/maps/example2"
-    },
-    {
-        "name": "Seaside Cafe",
-        "description": "A cozy cafe by the sea with a beautiful view.",
-        "operationHours": {
-            "opening": "7:00 AM",
-            "closing": "9:00 PM"
-        },
-        "phoneNumber": "+60 4-567 8901",
-        "address": "456 Beach Road",
-        "city": "Batu Ferringhi",
         "rating": 4.6,
-        "maps": "https://goo.gl/maps/example3"
+        "maps": "https://maps.app.goo.gl/2BYfr5awEUw4FmmJ9"
     },
     {
-        "name": "Mountain View Diner",
-        "description": "A diner with a stunning view of the mountains.",
+        "name": "Green House Hokkien Mee",
+        "description": "For over 30 years, the regulars have been returning for its Hokkien prawn mee, loh mee, or a mix of both. The red prawn soup made with pork bones and prawn shells boasts deep umami. Twelve additional toppings are also available.",
         "operationHours": {
             "opening": "6:00 AM",
             "closing": "10:00 PM"
         },
-        "phoneNumber": "+60 4-234 5678",
-        "address": "789 Hilltop Avenue",
-        "city": "Balik Pulau",
+        "phoneNumber": "+60 16-269 1717",
+        "address": "223, Jalan Burma",
+        "city": "George Town",
         "rating": 4.8,
-        "maps": "https://goo.gl/maps/example4"
+        "maps": "https://maps.app.goo.gl/1Vgeb437BGaWj7FG9"
     },
     {
-        "name": "City Central Bistro",
-        "description": "A bistro located in the heart of the city.",
+        "name": "Hema Hema Ice Cream",
+        "description": "An artisanal ice cream shop in George Town (Penang, Malaysia) that opened in 2022. Since its opening, it’s being flocked by locals and tourists alike.",
+        "operationHours": {
+            "opening": "1:00 PM",
+            "closing": "10:00 PM"
+        },
+        "phoneNumber": "N/A",
+        "address": "88, Lebuh Campbell",
+        "city": "George Town",
+        "rating": 4.9,
+        "maps": "https://maps.app.goo.gl/1MH5C4Y9WHXTKJvR8"
+    },
+    {
+        "name": "Kopi Hutan",
+        "description": "This is the highest cafe in Penang, situated at about 730 meters above sea level, offering a serene ambiance that's truly breathtaking!",
+        "operationHours": {
+            "opening": "9:00 AM",
+            "closing": "5:30 AM"
+        },
+        "phoneNumber": "+60 12-428 9585",
+        "address": " Bukit Bendera",
+        "city": "Penang Hill",
+        "rating": 4.9,
+        "maps": "https://maps.app.goo.gl/ugVN4VfE1yFxvAkx8"
+    },
+    {
+        "name": "Luodong",
+        "description": "The famous cafe from Sungai Petani, now with a second branch in Georgetown. In this new location, they not only serve delicious pastries & tea but also a variety of food including rice, noodles, snacks & coffee !",
+        "operationHours": {
+            "opening": "11:00 AM",
+            "closing": "9:00 PM"
+        },
+        "phoneNumber": "+60 10-975 7671",
+        "address": " 84, Lebuh Gereja",
+        "city": "George Town",
+        "rating": 4.9,
+        "maps": "https://maps.app.goo.gl/R3KpJUbXVrc6qPecA"
+    },
+    {
+        "name": "Penang Road Famous Teochew Chendul",
+        "description": "A family-owned business that stood the test of time, we first started selling chendul at our humble stall located at Penang Road in 1936.",
+        "operationHours": {
+            "opening": "9:00 AM",
+            "closing": "6:30 PM"
+        },
+        "phoneNumber": "+60 4-262 6002",
+        "address": "435B, Lebuh Pantai",
+        "city": "George Town",
+        "rating": 4.9,
+        "maps": "https://maps.app.goo.gl/wKBQ6VphnvYFK9nj9"
+    },
+    {
+        "name": "The FOUNDERS Hutton",
+        "description": "MORE THAN JUST A CAFE by the original team from People & Places Café, led by #DADDY @SOONPORTER & Alexa Ooi (recipe developer).",
         "operationHours": {
             "opening": "9:00 AM",
             "closing": "11:00 PM"
         },
-        "phoneNumber": "+60 4-345 6789",
-        "address": "101 City Center",
+        "phoneNumber": "+60 18-773 5303",
+        "address": "17, Jalan Hutton",
         "city": "George Town",
         "rating": 4.9,
-        "maps": "https://goo.gl/maps/example5"
+        "maps": "https://maps.app.goo.gl/LL3V1Tvzj18UH1ya8"
     }
+
 ]
