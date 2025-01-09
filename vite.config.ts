@@ -15,6 +15,6 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',  // This will specify the output folder as 'dist'
+    outDir: path.resolve(__dirname, 'dist'),  // This will specify the output folder as 'dist'
   },
 })
