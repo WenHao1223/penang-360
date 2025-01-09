@@ -24,6 +24,12 @@ const Attractions: React.FC = () => {
     const [selectedAttraction, setSelectedAttraction] =
         useState<AttractionType | null>(null);
 
+    const truncateDescription = (description: string, maxLength: number) => {
+        return description.length > maxLength
+            ? description.substring(0, maxLength) + "..."
+            : description;
+    };
+
     useEffect(() => {
         gsap.to(headerRef.current, {
             y: -50,
@@ -97,7 +103,7 @@ const Attractions: React.FC = () => {
                                         {attraction.name}
                                     </h3>
                                     <p className="text-gray-400">
-                                        {attraction.description}
+                                        {truncateDescription(attraction.description, 150)}
                                     </p>
                                     <p className="text-gray-600 mt-4">
                                         <span className="text-yellow-500">
