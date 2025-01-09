@@ -12,6 +12,9 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@assets': path.resolve(__dirname, 'public/assets'),
-    }
-  }
+    },
+  },
+  build: {
+    outDir: 'dist',  // This will specify the output folder as 'dist'
+  },
 })
