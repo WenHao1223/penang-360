@@ -1,82 +1,66 @@
 [
     {
-        "name": "Hotel Penang Paradise",
-        "description": "A luxurious hotel offering stunning views of the Penang skyline.",
+        "name": "Shangri-La Golden Sands",
+        "description": "Overlooking Batu Feringgi Beach, Shangri-La Rasa Sayang, Penang offers spacious rooms surrounded by 30 acres of tropical gardens. It features two outdoor swimming pools in the Garden Wing and one adult pool in the Rasa Wing pool accessible for Rasa Wing Rooms & Suites bookings only..",
         "operationHours": {
             "checkIn": "3:00 PM",
             "checkOut": "12:00 PM"
         },
-        "phoneNumber": "+60 4-123 4567",
-        "address": "123 Paradise Road",
-        "city": "George Town",
-        "rating": 4.8,
-        "maps": "https://goo.gl/maps/example1",
-        "facilities": ["Free WiFi", "Swimming Pool", "Spa", "Gym", "Restaurant"],
-        "avgPricePerNight": 150,
+        "phoneNumber": "04-888 8888",
+        "address": "Jalan Batu Ferringhi, Kampung Tanjung Huma, 11100 Batu Ferringhi, Penang.",
+        "city": "Batu Ferringhi",
+        "rating": 4.6,
+        "maps": "https://www.shangri-la.com/en/penang/rasasayangresort/?WT.mc_id=RSR_220407_MY_SEM_BING_AON_BRANDDOMESTIC_RSA_TEXTLINK_EN_shangri-la%20penang-StaycationOffers&&&&&gclsrc=3p.ds&msclkid=4f20e320b2271606c55d845f6f364290",
+        "facilities": ["Beach Access", "Free WiFi", "Swimming Pool", "Spa", "Gym", "Restaurant"],
+        "avgPricePerNight": 900,
         "topRatedComment": "Excellent service! The staff were incredibly friendly and helpful. The rooms were clean and comfortable, and the view from our room was breathtaking. We will definitely be coming back!"
     },
     {
-        "name": "Seaside Resort",
-        "description": "A beachfront resort perfect for a relaxing getaway.",
+        "name": "Eastern & Oriental Hotel",
+        "description": "The Eastern & Oriental Hotel – known simply as the ‘E&O’ to generations of travellers – exudes a charm that is inimitably its own. For most of its history, its passageways and halls were the preserve of the rich and privileged from the Western world – intrepid travellers that included acclaimed writers and aspiring literati who arrived in steamships seeking to experience the exotic East.",
         "operationHours": {
             "checkIn": "2:00 PM",
             "checkOut": "11:00 AM"
         },
-        "phoneNumber": "+60 4-234 5678",
-        "address": "456 Seaside Avenue",
-        "city": "Batu Ferringhi",
-        "rating": 4.5,
-        "maps": "https://goo.gl/maps/example2",
-        "facilities": ["Beach Access", "Free Breakfast", "Swimming Pool", "Bar"],
-        "avgPricePerNight": 200,
+        "phoneNumber": "04-222 2000",
+        "address": "10, Lebuh Farquhar, 10200 Penang Malaysia",
+        "city": "George Town",
+        "rating": 4.8,
+        "maps": "https://www.eohotels.com/",
+        "facilities": ["Free Breakfast", "Swimming Pool", "Bar", "Restaurant"],
+        "avgPricePerNight": 750,
         "topRatedComment": "Amazing views! The beach was just a few steps away from our room. The breakfast buffet had a great variety of options, and the pool area was very relaxing. Highly recommend!"
     },
     {
-        "name": "Heritage Hotel",
-        "description": "A charming hotel located in the heart of George Town's heritage district.",
+        "name": "G-Hotel Gurney",
+        "description": "G Hotel is an urban oasis, fitting for both discerning business and leisure guests. Rich in modern contemporary architecture and opulent interior designs, the 312-room hotel offers spacious rooms with stunning views of the ever-evolving skyline or Straits of Malacca. Discover just about everything Penang has to offer right at your doorstep for unimaginable convenience.",
         "operationHours": {
             "checkIn": "3:00 PM",
-            "checkOut": "12:00 PM"
-        },
-        "phoneNumber": "+60 4-345 6789",
-        "address": "789 Heritage Street",
-        "city": "George Town",
-        "rating": 4.7,
-        "maps": "https://goo.gl/maps/example3",
-        "facilities": ["Free WiFi", "Restaurant", "Bar"],
-        "avgPricePerNight": 120,
-        "topRatedComment": "Great location! The hotel is situated in the heart of the heritage district, making it easy to explore the local attractions. The staff were very accommodating, and the room was spacious and well-maintained."
-    },
-    {
-        "name": "Mountain View Inn",
-        "description": "A cozy inn offering breathtaking views of Penang Hill.",
-        "operationHours": {
-            "checkIn": "4:00 PM",
             "checkOut": "11:00 AM"
         },
-        "phoneNumber": "+60 4-456 7890",
-        "address": "101 Mountain Road",
-        "city": "Air Itam",
-        "rating": 4.6,
-        "maps": "https://goo.gl/maps/example4",
-        "facilities": ["Free WiFi", "Free Parking", "Restaurant", "Room Service", "Garden"],
-        "avgPricePerNight": 100,
-        "topRatedComment": "Beautiful views! The inn is located in a serene area with stunning views of Penang Hill. The garden was a lovely place to relax, and the room service was prompt and efficient. A perfect getaway!"
+        "phoneNumber": "04-238 0000",
+        "address": "168A Persiaran Gurney, 10250 Penang, Malaysia.",
+        "city": "George Town",
+        "rating": 4.5,
+        "maps": "https://gurney.ghotel.com.my/",
+        "facilities": ["Free WiFi", "Free Parking", "Restaurant", "Beach View", "Garden"],
+        "avgPricePerNight": 450,
+        "topRatedComment": "Great location! The hotel is right by the beach, and the view from our room was amazing. The staff were friendly and accommodating, and the room was clean and comfortable. Would definitely stay here again!"
     },
     {
-        "name": "City Center Hotel",
-        "description": "A modern hotel located in the bustling city center.",
+        "name": "The Edison",
+        "description": "A meticulously restored Colonial mansion set in the heart of historical George Town, Penang - a Lifestyle Hotel awaits to be discovered. Offering a combination of luxurious comfort, exceptional guest service and gracious hospitality, it is where one can truly Experience the Exceptional.",
         "operationHours": {
             "checkIn": "3:00 PM",
             "checkOut": "12:00 PM"
         },
-        "phoneNumber": "+60 4-567 8901",
+        "phoneNumber": "04-262 2990",
         "address": "202 City Center Boulevard",
         "city": "George Town",
-        "rating": 4.4,
-        "maps": "https://goo.gl/maps/example5",
-        "facilities": ["Free WiFi", "Gym", "Restaurant", "Bar", "Business Center"],
-        "avgPricePerNight": 130,
-        "topRatedComment": "Very convenient location! The hotel is right in the city center, making it easy to access shops, restaurants, and public transport. The gym was well-equipped, and the restaurant served delicious meals."
+        "rating": 4.7,
+        "maps": "https://theedisonhotels.com/",
+        "facilities": ["Free WiFi", "Gym", "Restaurant", "Bar", "Heritage Tour"],
+        "avgPricePerNight": 600,
+        "topRatedComment": "The Edison is well located, there are plenty of restaurants and bars nearby, along with so many of the local historic buildings close by. The Jetty's are about a 20 minute walk away and you can look at a lot of the local street art on route. Albert and his team were friendly and very helpful, with so much knowledge of the area."
     }
 ]
