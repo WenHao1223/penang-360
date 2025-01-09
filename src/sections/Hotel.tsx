@@ -79,8 +79,8 @@ const Hotel = () => {
                     Hotel
                 </h2>
                 <p className="text-gray-600">
-                    Explore our hotel and learn more about our services and how
-                    we can help you.
+                    Explore a selection of hotels, each offering unique comfort
+                    and services to enhance your stay.
                 </p>
             </div>
             <div

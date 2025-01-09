@@ -71,11 +71,11 @@ const Attractions: React.FC = () => {
             <div className="absolute inset-0 z-0 bg-white"></div>
             <div ref={headerRef} className="relative text-center opacity-0">
                 <h2 className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
-                    Places of Attraction
+                    Places of Attractionz
                 </h2>
                 <p className="text-gray-600">
-                    Explore our attractions and learn more about our services
-                    and how we can help you.
+                    Explore our breathtaking and captivating attractions, where
+                    every moment promises unforgettable memories.
                 </p>
             </div>
             <div
@@ -103,7 +103,10 @@ const Attractions: React.FC = () => {
                                         {attraction.name}
                                     </h3>
                                     <p className="text-gray-400">
-                                        {truncateDescription(attraction.description, 150)}
+                                        {truncateDescription(
+                                            attraction.description,
+                                            150
+                                        )}
                                     </p>
                                     <p className="text-gray-600 mt-4">
                                         <span className="text-yellow-500">
