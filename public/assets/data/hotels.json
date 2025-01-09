@@ -6,12 +6,19 @@
             "checkIn": "3:00 PM",
             "checkOut": "12:00 PM"
         },
-        "phoneNumber": "04-888 8888",
+        "phoneNumber": "+60 4-888 8888",
         "address": "Jalan Batu Ferringhi, Kampung Tanjung Huma, 11100 Batu Ferringhi, Penang.",
         "city": "Batu Ferringhi",
         "rating": 4.6,
         "maps": "https://www.shangri-la.com/en/penang/rasasayangresort/?WT.mc_id=RSR_220407_MY_SEM_BING_AON_BRANDDOMESTIC_RSA_TEXTLINK_EN_shangri-la%20penang-StaycationOffers&&&&&gclsrc=3p.ds&msclkid=4f20e320b2271606c55d845f6f364290",
-        "facilities": ["Beach Access", "Free WiFi", "Swimming Pool", "Spa", "Gym", "Restaurant"],
+        "facilities": [
+            "Beach Access",
+            "Free WiFi",
+            "Swimming Pool",
+            "Spa",
+            "Gym",
+            "Restaurant"
+        ],
         "avgPricePerNight": 900,
         "topRatedComment": "Excellent service! The staff were incredibly friendly and helpful. The rooms were clean and comfortable, and the view from our room was breathtaking. We will definitely be coming back!"
     },
@@ -22,12 +29,17 @@
             "checkIn": "2:00 PM",
             "checkOut": "11:00 AM"
         },
-        "phoneNumber": "04-222 2000",
+        "phoneNumber": "+60 4-222 2000",
         "address": "10, Lebuh Farquhar, 10200 Penang Malaysia",
         "city": "George Town",
         "rating": 4.8,
         "maps": "https://www.eohotels.com/",
-        "facilities": ["Free Breakfast", "Swimming Pool", "Bar", "Restaurant"],
+        "facilities": [
+            "Free Breakfast",
+            "Swimming Pool",
+            "Bar",
+            "Restaurant"
+        ],
         "avgPricePerNight": 750,
         "topRatedComment": "Amazing views! The beach was just a few steps away from our room. The breakfast buffet had a great variety of options, and the pool area was very relaxing. Highly recommend!"
     },
@@ -38,12 +50,18 @@
             "checkIn": "3:00 PM",
             "checkOut": "11:00 AM"
         },
-        "phoneNumber": "04-238 0000",
+        "phoneNumber": "+60 4-238 0000",
         "address": "168A Persiaran Gurney, 10250 Penang, Malaysia.",
         "city": "George Town",
         "rating": 4.5,
         "maps": "https://gurney.ghotel.com.my/",
-        "facilities": ["Free WiFi", "Free Parking", "Restaurant", "Beach View", "Garden"],
+        "facilities": [
+            "Free WiFi",
+            "Free Parking",
+            "Restaurant",
+            "Beach View",
+            "Garden"
+        ],
         "avgPricePerNight": 450,
         "topRatedComment": "Great location! The hotel is right by the beach, and the view from our room was amazing. The staff were friendly and accommodating, and the room was clean and comfortable. Would definitely stay here again!"
     },
@@ -54,12 +72,18 @@
             "checkIn": "3:00 PM",
             "checkOut": "12:00 PM"
         },
-        "phoneNumber": "04-262 2990",
+        "phoneNumber": "+60 4-262 2990",
         "address": "202 City Center Boulevard",
         "city": "George Town",
         "rating": 4.7,
         "maps": "https://theedisonhotels.com/",
-        "facilities": ["Free WiFi", "Gym", "Restaurant", "Bar", "Heritage Tour"],
+        "facilities": [
+            "Free WiFi",
+            "Gym",
+            "Restaurant",
+            "Bar",
+            "Heritage Tour"
+        ],
         "avgPricePerNight": 600,
         "topRatedComment": "The Edison is well located, there are plenty of restaurants and bars nearby, along with so many of the local historic buildings close by. The Jetty's are about a 20 minute walk away and you can look at a lot of the local street art on route. Albert and his team were friendly and very helpful, with so much knowledge of the area."
     }
