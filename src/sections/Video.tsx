@@ -44,8 +44,8 @@ const Video: React.FC = () => {
             "vid-frame"
         ) as HTMLIFrameElement;
         if (vidFrame) {
-            const minWidth = 300;
-            const minHeight = 168.75;
+            const minWidth = (720 / 28) * 15;
+            const minHeight = (405 / 28) * 15;
             const width =
                 document.getElementById("video")?.clientWidth! * 0.6 ||
                 minWidth;
@@ -65,7 +65,7 @@ const Video: React.FC = () => {
             window.removeEventListener("resize", updateVideoDimensions);
     }, []);
 
-return (
+    return (
         <section
             className="section relative pt-24 xl:pt-16 px-4 sm:px-8 md:px-32 lg:px-64 min-h-screen h-screen flex flex-col items-center justify-center gap-0"
             id="video"
@@ -90,14 +90,10 @@ return (
             >
                 <div className="relative mx-auto">
                     <iframe
-                        id="vid-frame"
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/TDeP0fOfmHQ"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
+                        src="https://drive.google.com/file/d/1RdfbWlTwzmWSYQUD2Fl3Rh3kE7C6mLN7/preview"
+                        width="720"
+                        height="405"
+                        allow="autoplay"
                         className="relative rounded-lg"
                     ></iframe>
                 </div>
