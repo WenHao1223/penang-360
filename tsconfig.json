@@ -17,6 +17,7 @@
             "@utils/*": ["utils/*"],
             "@assets/*": ["../assets/*"]
         },
+        "typeRoots": ["node_modules/@types", "src/types"],
         "outDir": "./dist", // Specify the output directory for compiled files
         "rootDir": "./src" // Specify the root directory of your source files
     },
