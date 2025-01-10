@@ -130,7 +130,9 @@ const PhotoGallery: React.FC<MasonryProps> = ({
                                 </h3>
                                 <button
                                     className="btn mt-4 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
-                                    onClick={() => viewFood(FoodJSON[index])}
+                                    onClick={() => viewFood(
+                                        FoodJSON.find((food: FoodType) => food.name === foodNames[index]) as FoodType
+                                    )}
                                 >
                                     View
                                 </button>
