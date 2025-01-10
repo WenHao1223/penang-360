@@ -126,30 +126,35 @@ const Navbar: React.FC = () => {
                                 <a
                                     href="#"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                    onClick={toggleMenu}
                                 >
                                     Home
                                 </a>
                                 <a
                                     href="#intro"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                    onClick={toggleMenu}
                                 >
                                     About
                                 </a>
                                 <a
                                     href="#attractions"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                    onClick={toggleMenu}
                                 >
                                     Attractions
                                 </a>
                                 <a
                                     href="#food"
                                     className="-mx-3 block rounded-lg px-3 p y-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                    onClick={toggleMenu}
                                 >
                                     Dining
                                 </a>
                                 <a
                                     href="#hotel"
                                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                    onClick={toggleMenu}
                                 >
                                     Hotel
                                 </a>
