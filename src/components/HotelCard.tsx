@@ -26,35 +26,7 @@ const HotelCard: React.FC<{
 }> = ({ hotel, handleOpenModal }) => {
     const maxFacilitiesToShow = 3;
     const extraFacilitiesCount = hotel.facilities.length - maxFacilitiesToShow;
-    const maxCommentLength = 200;
-    const truncatedComment =
-        hotel.topRatedComment.length > maxCommentLength
-            ? hotel.topRatedComment.substring(0, maxCommentLength) + "..."
-            : hotel.topRatedComment;
-    const [showDes, setShowDes] = React.useState(true);
     const viewMoreButtonRef = React.useRef<HTMLButtonElement>(null);
-
-    useEffect(() => {
-        if (
-            window.innerWidth < 1400 ||
-            window.matchMedia("(pointer: coarse)").matches
-        ) {
-            setShowDes(false);
-        } else {
-            setShowDes(true);
-        }
-    }, []);
-
-    window.addEventListener("resize", () => {
-        if (
-            window.innerWidth < 1400 ||
-            window.matchMedia("(pointer: coarse)").matches
-        ) {
-            setShowDes(false);
-        } else {
-            setShowDes(true);
-        }
-    });
 
     const handleMouseMove = (
         e: React.MouseEvent<HTMLElement>,
@@ -153,63 +125,6 @@ const HotelCard: React.FC<{
                         </span>
                     )}
                 </div>
-                {showDes ? (
-                    <div className="hidden group-hover:block mt-2">
-                        <div className="mt-4">
-                            <p className="mt-2 text-sm">{hotel.description}</p>
-                            <div className="flex flex-wrap my-4 text-xs">
-                                <div className="w-full md:w-1/2 pr-2">
-                                    <p className="mt-1">
-                                        <span className="font-semibold">
-                                            Operation Hours:{" "}
-                                        </span>
-                                        <span>
-                                            Check-in{" "}
-                                            {hotel.operationHours.checkIn} |
-                                            Check-out{" "}
-                                            {hotel.operationHours.checkOut}
-                                        </span>
-                                    </p>
-                                    <p className="mt-1">
-                                        <span className="font-semibold">
-                                            Phone:{" "}
-                                        </span>
-                                        <span className="">
-                                            {hotel.phoneNumber}
-                                        </span>
-                                    </p>
-                                </div>
-                                <div className="w-full md:w-1/2 pl-2">
-                                    <p className="mt-1">
-                                        <span className="font-semibold">
-                                            Address:{" "}
-                                        </span>
-                                        <span>{hotel.address}</span>
-                                    </p>
-                                    <p className="mt-1">
-                                        <span className="font-semibold">
-                                            Facilities:{" "}
-                                        </span>
-                                        <span>
-                                            {hotel.facilities.join(", ")}
-                                        </span>
-                                    </p>
-                                </div>
-                            </div>
-                            <p className="mt-4 italic text-xs">
-                                "{truncatedComment}"
-                            </p>
-                            <p className="mt-2">
-                                <span className="text-sm font-semibold">
-                                    Avg. Price Per Night:{" "}
-                                </span>
-                                <span className="text-lg text-rose-500 font-bold">
-                                    RM{hotel.avgPricePerNight.toFixed(2)}
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                ) : (
                     <button
                         className="hidden group-hover:block btn my-4 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
                         onClick={() => handleOpenModal(hotel)}
@@ -226,7 +141,6 @@ const HotelCard: React.FC<{
                     >
                         Show More
                     </button>
-                )}
             </div>
         </div>
     );
