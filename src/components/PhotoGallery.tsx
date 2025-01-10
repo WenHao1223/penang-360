@@ -72,16 +72,8 @@ const PhotoGallery: React.FC<MasonryProps> = ({
             loadImages();
         } else {
             loadFoodImages();
-            console.log(foodNames);
         }
     }, [section, name]);
-
-    useEffect(() => {
-        console.log(photos);
-    }, [photos]);
-    useEffect(() => {
-        console.log(foodNames);
-    }, [foodNames]);
 
     const getColumns = () => {
         const width = window.innerWidth;
