@@ -44,17 +44,17 @@ const Video: React.FC = () => {
             "vid-frame"
         ) as HTMLIFrameElement;
         if (vidFrame) {
-            const minWidth = (720 / 28) * 15;
-            const minHeight = (405 / 28) * 15;
-            const width =
+            const minWidth = (720 * 20) / 28;
+            const minHeight = (405 * 20) / 28;
+            const width = Math.max(
                 document.getElementById("video")?.clientWidth! * 0.6 ||
-                minWidth;
-            const height =
-                document.getElementById("video")?.clientHeight! * 0.6 ||
-                minHeight;
+                    minWidth,
+                minWidth
+            );
+            const height = (width / 16) * 9;
 
-            vidFrame.width = Math.max(width, minWidth).toString();
-            vidFrame.height = Math.max(height, minHeight).toString();
+            vidFrame.width = width.toString();
+            vidFrame.height = height.toString();
         }
     };
 
@@ -78,7 +78,7 @@ const Video: React.FC = () => {
                     <h2 className="text-4xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
                         Watch Our Video
                     </h2>
-                    <p className="text-gray-600 text-sm mb-4">
+                    <p className="text-gray-600 text-sm mb-8">
                         Watch our video to learn more about our services and how
                         we can help you.
                     </p>
@@ -90,11 +90,13 @@ const Video: React.FC = () => {
             >
                 <div className="relative mx-auto">
                     <iframe
+                        id="vid-frame"
                         src="https://drive.google.com/file/d/1RdfbWlTwzmWSYQUD2Fl3Rh3kE7C6mLN7/preview"
                         width="720"
                         height="405"
                         allow="autoplay"
                         className="relative rounded-lg"
+                        allowFullScreen
                     ></iframe>
                 </div>
             </div>
