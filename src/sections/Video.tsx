@@ -46,12 +46,18 @@ const Video: React.FC = () => {
         if (vidFrame) {
             const minWidth = (720 * 20) / 28;
             const minHeight = (405 * 20) / 28;
-            const width = Math.max(
+            const maxWidth = window.innerWidth * 0.9;
+            let width = Math.max(
                 document.getElementById("video")?.clientWidth! * 0.6 ||
                     minWidth,
                 minWidth
             );
-            const height = (width / 16) * 9;
+            let height = (width / 16) * 9;
+
+            if (width > maxWidth) {
+                width = maxWidth;
+                height = (width / 16) * 9;
+            }
 
             vidFrame.width = width.toString();
             vidFrame.height = height.toString();
