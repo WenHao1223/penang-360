@@ -30,7 +30,7 @@ const Intro: React.FC = () => {
                     </p>
                     {/* </div> */}
                     <a
-                        className="btn mt-4 rounded-none text-white px-8 hover:text-black hover:bg-white"
+                        className="btn mt-4 rounded-none bg-black text-white px-8 hover:text-black hover:bg-white"
                         href="https://mypenang.gov.my/"
                         target="_blank"
                     >
