@@ -1,7 +1,20 @@
 [
     {
+        "name": "Penang Street Art",
+        "description": "Street Art Penang is made because of the lack of interactive maps for tourist in Penang. Most maps hotels in penang provide do not list the exact location of all the street art. Especially they do not list all the street art. The map provided on this website lists all the street art in Penang and provides users with easy to use routes they can follow to see the most of Georgetown.",
+        "operationHours": {
+            "opening": "Open 24 Hours",
+            "closing": ""
+        },
+        "phoneNumber": "mail@streetartpenang.com",
+        "address": "316, Beach St, Georgetown, 10300 George Town, Penang",
+        "city": "George Town",
+        "websiteLink": "https://streetartpenang.com/",
+        "rating": 4.3
+    },
+    {
         "name": "Penang Hill",
-        "description": "A hill resort comprising a group of peaks on Penang Island.",
+        "description": "Penang Hill, also known as Bukit Bendera, is a hilly forested area located west of George Town that has been developed into a hill station and a UNESCO recognized Biosphere Reserve. At 833m above sea level, Penang Hill is a perfect nature getaway that offers fantastic views of the island and even mainland Malaysia as well as a perfect way to get to know the local flora and fauna. ",
         "operationHours": {
             "opening": "6:30 AM",
             "closing": "11:00 PM"
@@ -10,11 +23,11 @@
         "address": "Jalan Stesen Bukit Bendera, Air Itam",
         "city": "George Town",
         "websiteLink": "http://www.penanghill.gov.my",
-        "rating": 4.5
+        "rating": 4.2
     },
     {
         "name": "Kek Lok Si Temple",
-        "description": "A Buddhist temple situated in Air Itam in Penang.",
+        "description": "The millions of of magnificent images of Buddha and the hundreds of beautiful meaningful carvings, sculptures and murals in the interior and exterior of the temple halls, pagodas and archways are heritage treasures of Buddhist civilization. The temple complex also features many magnificent buildings and interesting sites that have historic value.",
         "operationHours": {
             "opening": "8:30 AM",
             "closing": "5:30 PM"
@@ -26,16 +39,29 @@
         "rating": 4.7
     },
     {
-        "name": "Penang National Park",
-        "description": "A national park located on the northwest corner of Penang Island.",
+        "name": "Entopia Butterfly Farm",
+        "description": "The Natureland, which is a living garden vivarium, is a shared ecological space for a variety of animals from invertebrates and reptiles living in their re-created natural habitat. It is the one of the largest butterfly garden in Malaysia with approximately 15,000 free-flying butterflies at any one time consisting of up to 60 species. The living garden features more than 200 species of plants with waterfalls, ponds, caves and other artistic garden features.",
         "operationHours": {
-            "opening": "7:30 AM",
+            "opening": "9:00 AM",
             "closing": "6:00 PM"
         },
-        "phoneNumber": "+60 4-881 3530",
-        "address": "Jalan Hassan Abas, Teluk Bahang",
+        "phoneNumber": "04-888 8111",
+        "address": "830, Jalan Teluk Bahang, Teluk Bahang, 11050 Tanjung Bungah, Pulau Pinang",
         "city": "George Town",
-        "websiteLink": "http://www.penangnationalpark.com",
-        "rating": 4.6
+        "websiteLink": "https://www.entopia.com/",
+        "rating": 4.4
+    },
+    {
+        "name": "Batu Ferringhi Beach",
+        "description": "Batu Ferringhi Beach, nestled on the northern coast of Penang Island, Malaysia, stands as a premier destination for both tourists and locals. Renowned for its breathtaking sunsets and dynamic nightlife, this picturesque locale offers an array of activities that cater to diverse interests. The beach’s pristine sands and clear waters make it a paradise for sunbathers, swimmers, and adventure seekers alike.",
+        "operationHours": {
+            "opening": "Open 24 Hours",
+            "closing": ""
+        },
+        "phoneNumber": "",
+        "address": "Jalan Batu Ferringhi, 11100 Batu Ferringhi, Pulau Pinang.",
+        "city": "George Town",
+        "websiteLink": "https://www.awaygowe.com/batu-ferringhi-beach-penang/",
+        "rating": 4.3
     }
 ]
