@@ -82,6 +82,9 @@ const Hotel = () => {
                     Explore a selection of hotels, each offering unique comfort
                     and services to enhance your stay.
                 </p>
+                <p className="text-gray-600 mt-4 text-sm">
+                    Click or hover on a card to view more details.
+                </p>
             </div>
             <div
                 ref={carouselRef}
