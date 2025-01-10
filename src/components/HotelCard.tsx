@@ -137,7 +137,7 @@ const HotelCard: React.FC<{
                         .map((facility, index) => (
                             <span
                                 key={index}
-                                className="bg-gray-700 text-gray-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                                className="bg-gray-700 text-gray-200 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mb-2 group-hover:mb-0"
                             >
                                 {facility}
                             </span>
@@ -211,7 +211,7 @@ const HotelCard: React.FC<{
                     </div>
                 ) : (
                     <button
-                        className="hidden group-hover:block btn mt-8 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
+                        className="hidden group-hover:block btn my-4 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
                         onClick={() => handleOpenModal(hotel)}
                         ref={viewMoreButtonRef}
                         onMouseMove={(e) =>
