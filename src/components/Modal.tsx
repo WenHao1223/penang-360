@@ -37,6 +37,16 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
     const websiteButtonRef = useRef<HTMLAnchorElement>(null);
     const closeButtonRef = useRef<HTMLButtonElement>(null);
 
+    const maxCommentLength = 200;
+    let truncatedComment = "";
+
+    if (item.topRatedComment) {
+        truncatedComment =
+            item.topRatedComment.length > maxCommentLength
+                ? item.topRatedComment.substring(0, maxCommentLength) + "..."
+                : item.topRatedComment;
+    }
+
     const handleMouseMove = (
         e: React.MouseEvent<HTMLElement>,
         buttonRef: React.RefObject<HTMLElement>,
@@ -91,7 +101,17 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                         ))}
                     </div>
                 )}
-                <p className="text-gray-600">{item.description}</p>
+                <p className="my-2 text-gray-600">{item.description}</p>
+                {item.avgPricePerNight && (
+                    <div className="my-4">
+                        <p className="text-gray-600 font-bold">
+                            Average Price Per Night:
+                        </p>
+                        <p className="text-red-500 font-bold text-xl lg:text-2xl">
+                            RM{item.avgPricePerNight.toFixed(2)}
+                        </p>
+                    </div>
+                )}
                 <div className="my-4 sm:grid grid-cols-1 md:grid-cols-2 gap-4">
                     {item.operationHours.opening && (
                         <div>
@@ -186,6 +206,16 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                             </span>{" "}
                             ({item.rating})
                         </p>
+                        {item.topRatedComment && (
+                            <div className="my-4">
+                                <p className="text-gray-600 font-bold">
+                                    Top Rated Comment:
+                                </p>
+                                <p className="text-gray-600 italic">
+                                    "{truncatedComment}"
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
                 {item?.websiteLink && (
