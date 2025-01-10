@@ -78,9 +78,12 @@ const Hotel = () => {
                 <h2 className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one mb-2 sm:mb-6">
                     Hotel
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-sm md:text-md text-gray-600">
                     Explore a selection of hotels, each offering unique comfort
                     and services to enhance your stay.
+                </p>
+                <p className="text-gray-600 mt-4 text-sm">
+                    Click or hover on a card to view more details.
                 </p>
             </div>
             <div

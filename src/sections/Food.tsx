@@ -22,19 +22,24 @@ const Food: React.FC = () => {
     return (
         <div
             id="food"
-            className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0"
+            className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-40 2xl:px-64 min-h-screen flex flex-col items-center justify-center gap-0"
         >
             <div className="absolute inset-0 bg-gradient-to-tr from-pink-100 to-white z-0"></div>
-            <div className="z-10 flex flex-col items-center justify-center gap-4">
+            <div className="z-10 flex flex-col items-center justify-center">
                 <h1
                     ref={titleRef}
                     className="text-2xl sm:text-3xl md:text-5xl py-0 font-bold text-black centa-one"
                 >
                     Food & Dining
                 </h1>
-                <p ref={descriptionRef} className="text-center text-gray-500">
-                    Discover the best places to eat in the city.
-                </p>
+                <div ref={descriptionRef} className="gap-2">
+                    <p className="mt-4 text-sm md:text-md text-center text-gray-500">
+                        Discover the best places to eat in the city.
+                    </p>
+                    <p className="text-gray-600 text-sm">
+                        Click or hover on a card to view more details.
+                    </p>
+                </div>
             </div>
             <div
                 ref={boxRef}
