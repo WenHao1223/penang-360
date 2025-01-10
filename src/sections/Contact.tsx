@@ -25,7 +25,7 @@ const Contact = () => {
                     <h6 className="footer-title">Social</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a
-                            href="https://www.facebook.com/"
+                            href="https://www.x.com/"
                             target="_blank"
                         >
                             <svg
@@ -39,7 +39,7 @@ const Contact = () => {
                             </svg>
                         </a>
                         <a
-                            href="https://www.twitter.com/"
+                            href="https://www.youtube.com/"
                             target="_blank"
                         >
                             <svg
@@ -53,7 +53,7 @@ const Contact = () => {
                             </svg>
                         </a>
                         <a
-                            href="https://www.instagram.com/"
+                            href="https://www.facebook.com/"
                             target="_blank"
                         >
                             <svg
