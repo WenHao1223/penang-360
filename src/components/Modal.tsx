@@ -128,7 +128,7 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                     {item.websiteLink && (
                         <div>
                             <p className="text-gray-600 font-bold">Website:</p>
-                            <p className="text-gray-600">
+                            <p className="text-gray-600 break-words">
                                 <a
                                     href={item.websiteLink}
                                     target="_blank"
