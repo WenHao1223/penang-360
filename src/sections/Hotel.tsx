@@ -123,13 +123,13 @@ const Hotel = () => {
                 </Swiper>
                 <button
                     onClick={handlePrev}
-                    className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
+                    className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 border-2 text-white border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
                 >
                     <i className="fa fa-chevron-left"></i>
                 </button>
                 <button
                     onClick={handleNext}
-                    className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 border-2 border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
+                    className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 border-2 text-white border-white hover:bg-white hover:text-black p-2 sm:p-3 rounded-full shadow-md z-20"
                 >
                     <i className="fa fa-chevron-right"></i>
                 </button>
