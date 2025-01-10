@@ -22,7 +22,7 @@ const Food: React.FC = () => {
     return (
         <div
             id="food"
-            className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-64 min-h-screen flex flex-col items-center justify-center gap-0"
+            className="section relative pt-24 xl:pt-16 px-8 sm:px-16 md:px-32 lg:px-40 2xl:px-64 min-h-screen flex flex-col items-center justify-center gap-0"
         >
             <div className="absolute inset-0 bg-gradient-to-tr from-pink-100 to-white z-0"></div>
             <div className="z-10 flex flex-col items-center justify-center gap-4">
