@@ -67,7 +67,7 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white p-6 rounded-md shadow-lg w-[90vw] sm:w-[80vw] max-w-[800px] max-h-[90vh] overflow-y-auto">
+            <div className="bg-white p-6 rounded-md shadow-lg w-[90vw] sm:w-[80vw] max-w-[80vw] md:max-w-[800px] max-h-[90vh] overflow-y-auto">
                 <AsyncImage
                     section={section}
                     name={item.name}
@@ -143,7 +143,7 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                     {item.maps && (
                         <div>
                             <p className="text-gray-600 font-bold">Maps:</p>
-                            <p className="text-gray-600">
+                            <p className="text-gray-600 break-words">
                                 <a
                                     href={item.maps}
                                     target="_blank"
