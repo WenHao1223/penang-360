@@ -125,11 +125,11 @@ const PhotoGallery: React.FC<MasonryProps> = ({
                     <div key={index} className="relative group">
                         {more && (
                             <div className="absolute bg-black/60 inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <h3 className="text-sm sm:text-md md:text-lg lg:text-xl font-semibold mb-0 md:mb-2 text-white p-2 text-center">
+                                <h3 className="text-sm sm:text-md md:text-lg font-semibold mb-0 md:mb-2 text-white p-2 text-center">
                                     {foodNames[index]}
                                 </h3>
                                 <button
-                                    className="btn mt-0 md:mt-4 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
+                                    className="btn mt-0 md:mt-2 rounded-none bg-white hover:bg-white hover:scale-105 text-black px-8"
                                     onClick={() => viewFood(
                                         FoodJSON.find((food: FoodType) => food.name === foodNames[index]) as FoodType
                                     )}
