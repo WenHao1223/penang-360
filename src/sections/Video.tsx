@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+
+import VideoThumbnail from "@assets/images/video/thumbnail.webp";
 
 const Video: React.FC = () => {
     const headerRef = useRef<HTMLHeadingElement>(null);
@@ -43,6 +45,9 @@ const Video: React.FC = () => {
         const vidFrame = document.getElementById(
             "vid-frame"
         ) as HTMLIFrameElement;
+        const thumbnailFrame = document.getElementById(
+            "thumbnail-frame"
+        ) as HTMLIFrameElement;
         if (vidFrame) {
             const minWidth = (720 * 20) / 28;
             const minHeight = (405 * 20) / 28;
@@ -61,6 +66,8 @@ const Video: React.FC = () => {
 
             vidFrame.width = width.toString();
             vidFrame.height = height.toString();
+            thumbnailFrame.width = width.toString();
+            thumbnailFrame.height = height.toString();
         }
     };
 
@@ -70,6 +77,11 @@ const Video: React.FC = () => {
         return () =>
             window.removeEventListener("resize", updateVideoDimensions);
     }, []);
+
+    const [isPlaying, setIsPlaying] = useState(false);
+    const handlePlay = () => {
+        setIsPlaying(true);
+    };
 
     return (
         <section
@@ -95,13 +107,23 @@ const Video: React.FC = () => {
                 className="relative w-full max-w-3xl opacity-0 flex items-center justify-center"
             >
                 <div className="relative mx-auto">
+                    {!isPlaying && (
+                        <img
+                            id="thumbnail-frame"
+                            src={VideoThumbnail}
+                            alt="Video Thumbnail"
+                            className="inset-0 h-auto w-full object-cover rounded-lg cursor-pointer"
+                            onClick={handlePlay}
+                        />
+                    )}
                     <iframe
                         id="vid-frame"
                         src="https://drive.google.com/file/d/1RdfbWlTwzmWSYQUD2Fl3Rh3kE7C6mLN7/preview"
                         width="720"
                         height="405"
-                        allow="autoplay"
-                        className="relative rounded-lg"
+                        className={`relative rounded-lg ${
+                            isPlaying ? "" : "hidden"
+                        }`}
                         allowFullScreen
                     ></iframe>
                 </div>
