@@ -2,11 +2,7 @@
     {
         "name": "Penang Street Art",
         "description": "Street Art Penang is made because of the lack of interactive maps for tourist in Penang. Most maps hotels in penang provide do not list the exact location of all the street art. Especially they do not list all the street art. The map provided on this website lists all the street art in Penang and provides users with easy to use routes they can follow to see the most of Georgetown.",
-        "operationHours": {
-            "opening": "Open 24 Hours",
-            "closing": ""
-        },
-        "phoneNumber": "mail@streetartpenang.com",
+        "operationHours": {},
         "address": "316, Beach St, Georgetown, 10300 George Town, Penang",
         "city": "George Town",
         "websiteLink": "https://streetartpenang.com/",
@@ -45,7 +41,7 @@
             "opening": "9:00 AM",
             "closing": "6:00 PM"
         },
-        "phoneNumber": "04-888 8111",
+        "phoneNumber": "+60 4-888 8111",
         "address": "830, Jalan Teluk Bahang, Teluk Bahang, 11050 Tanjung Bungah, Pulau Pinang",
         "city": "George Town",
         "websiteLink": "https://www.entopia.com/",
@@ -55,10 +51,7 @@
         "name": "Batu Ferringhi Beach",
         "description": "Batu Ferringhi Beach, nestled on the northern coast of Penang Island, Malaysia, stands as a premier destination for both tourists and locals. Renowned for its breathtaking sunsets and dynamic nightlife, this picturesque locale offers an array of activities that cater to diverse interests. The beach’s pristine sands and clear waters make it a paradise for sunbathers, swimmers, and adventure seekers alike.",
         "operationHours": {
-            "opening": "Open 24 Hours",
-            "closing": ""
         },
-        "phoneNumber": "",
         "address": "Jalan Batu Ferringhi, 11100 Batu Ferringhi, Pulau Pinang.",
         "city": "George Town",
         "websiteLink": "https://www.awaygowe.com/batu-ferringhi-beach-penang/",

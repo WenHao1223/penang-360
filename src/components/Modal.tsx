@@ -12,7 +12,7 @@ interface ItemType {
         checkIn?: string;
         checkOut?: string;
     };
-    phoneNumber: string;
+    phoneNumber?: string;
     address: string;
     city: string;
     websiteLink?: string;
@@ -135,10 +135,13 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                             </p>
                         </div>
                     )}
-                    <div>
-                        <p className="text-gray-600 font-bold">Phone:</p>
-                        <p className="text-gray-600">{item.phoneNumber}</p>
-                    </div>
+                    {
+                        item.phoneNumber &&
+                        <div>
+                            <p className="text-gray-600 font-bold">Phone:</p>
+                            <p className="text-gray-600">{item.phoneNumber}</p>
+                        </div>
+                    }
                     <div>
                         <p className="text-gray-600 font-bold">Address:</p>
                         <p className="text-gray-600">
@@ -182,24 +185,22 @@ const Modal: React.FC<ModalProps> = ({ item, section, onClose }) => {
                                 {[...Array(5)].map((_, i) => (
                                     <i
                                         key={i}
-                                        className={`fa-solid fa-star ${
-                                            i < Math.floor(item.rating)
-                                                ? "text-yellow-500"
-                                                : i < Math.ceil(item.rating)
+                                        className={`fa-solid fa-star ${i < Math.floor(item.rating)
+                                            ? "text-yellow-500"
+                                            : i < Math.ceil(item.rating)
                                                 ? "text-yellow-500"
                                                 : "text-gray-300"
-                                        }`}
+                                            }`}
                                         style={{
                                             clipPath:
                                                 i < Math.floor(item.rating)
                                                     ? "none"
                                                     : i < Math.ceil(item.rating)
-                                                    ? `inset(0 ${
-                                                          100 -
-                                                          (item.rating % 1) *
-                                                              100
-                                                      }% 0 0)`
-                                                    : "none",
+                                                        ? `inset(0 ${100 -
+                                                        (item.rating % 1) *
+                                                        100
+                                                        }% 0 0)`
+                                                        : "none",
                                         }}
                                     />
                                 ))}
