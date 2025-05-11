@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
+# Penang 360°
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live site:** [penang-360-usm.vercel.app](https://penang-360-usm.vercel.app/)  
+**GitHub repo:** [github.com/WenHao1223/penang-360](https://github.com/WenHao1223/penang-360)
 
-Currently, two official plugins are available:
+## 🌏 About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Penang 360°** is a responsive, visually engaging web app designed to provide locals and tourists with the best experiences in Penang. It offers curated information on attractions, dining, and hotels – all in one place.
 
-## Expanding the ESLint configuration
+Built using **React**, **TypeScript**, and **Vite**, this project emphasizes fast performance, intuitive design, and scalable code structure.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📸 Screenshot
+![Website Screenshot](public/assets/images/screenshots.png)
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- 📍 Discover Penang’s top attractions
+- 🍜 Find the best local food & dining spots
+- 🏨 Explore hotels by location and amenities
+- 📱 Mobile-responsive interface
+- 🎥 Embedded video overview
+- 🖼️ Interactive image cards and hover effects
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🛠️ Tech Stack
+
+- **Frontend:** React 18, TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Linting:** ESLint with type-aware config
+- **Deployment:** Vercel
+
+---
+
+## 📦 Development Setup
+
+```bash
+npm install
+npm run dev
